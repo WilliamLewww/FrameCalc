@@ -11,16 +11,14 @@ var currentDataCoord = [0,0];
 function initialize() {
 	var canvas = document.getElementById("glCanvas");
 	gl = canvas.getContext("experimental-webgl");
-	// gl.enable(gl.BLEND);
-	// gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
-	programList.push(createProgram(VERTEX_SHADER_1, FRAGMENT_SHADER_1));
+	programList.push(createProgram(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
 
 	gl.clearColor(0.0, 0.0, 0.0, 0.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-	for (var x = 0; x < 1; x++) { addData(1235.5555); }
+	for (var x = 0; x < 1; x++) { addData(Math.floor(Math.random()*(55999999+55999999+1)-55999999)/10000); }
 
 	pixelDataList.forEach(pixel => { pixel.draw(); });
 	console.log(convertPixelToData(getPixel(0,0)));
@@ -28,7 +26,7 @@ function initialize() {
 
 function addData(data) {
 	var rgba = convertDataToPixel(data);
-	console.log(rgba);
+	console.log(data + ":" + rgba);
 	pixelDataList.push(new Point(currentDataCoord[0], currentDataCoord[1], [rgba[0],rgba[1],rgba[2],rgba[3]]));
 
 	if (currentDataCoord[0] == gl.canvas.width - 1) {
@@ -56,7 +54,7 @@ function convertDataToPixel(data) {
 
 function convertPixelToData(pixel) {
 	var tempData = (pixel[0] - (Math.floor(pixel[0] / 100) * 100)) * 100;
-	tempData += Math.floor(pixel[1]/255.0*100.0) + (Math.floor((pixel[2]/255)*100)/100) + (Math.floor((pixel[3]/255*100))/10000);
+	tempData += Math.round(pixel[1]/255*MAX_RGB_VALUES[1]) + (Math.round(pixel[2]/255*MAX_RGB_VALUES[2])/100) + (Math.round((pixel[3]/255*MAX_RGB_VALUES[3]))/10000);
 
 	if (Math.floor(pixel[0] / 100) == 1) { return tempData; }
 	if (Math.floor(pixel[0] / 100) == 2) { return -tempData; }
