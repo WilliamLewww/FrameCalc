@@ -7,6 +7,7 @@ const VERTEX_SHADER_1 = [
 '	vec2 zeroToTwo = zeroToOne * 2.0;					 	\n',
 '	vec2 clipSpace = zeroToTwo - 1.0;					 	\n',
 '														 	\n',
+'	gl_PointSize = 1.0;										\n',
 '	gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);	 	\n',
 '}														 	\n',
 ].join('');

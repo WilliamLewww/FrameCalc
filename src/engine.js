@@ -14,8 +14,7 @@ function initialize() {
 	gl.clearColor(0.0, 0.0, 0.0, 1.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-	rectangle = new Rectangle(0, 0, 100, 100, [243,52,5,255]);
-	rectangle.draw();
+	point = new Point(0, 0, [255,0,0,255]); point.draw();
 
 	console.log(getPixel(0,0));
 }
@@ -48,11 +47,9 @@ function denormalizeColor(color) {
 	return [color[0] / 255.0, color[1] / 255.0, color[2] / 255.0, color[3] / 255.0];
 }
 
-function Rectangle(x, y, width, height, color = [255,0,0,255]) {
+function Point(x, y, color = [255,0,0,255]) {
 	this.x = x;
 	this.y = y;
-	this.width = width;
-	this.height = height;
 	this.color = color;
 
 	this.program = programList[0];
@@ -77,11 +74,11 @@ function Rectangle(x, y, width, height, color = [255,0,0,255]) {
 	this.getPositionArray = () => {
 		return [
 			this.x, this.y,
-			this.x + this.width, this.y,
-			this.x, this.y + this.height,
-			this.x, this.y + this.height,
-			this.x + this.width, this.y,
-			this.x + this.width, this.y + this.height,
+			this.x + 1, this.y,
+			this.x, this.y + 1,
+			this.x, this.y + 1,
+			this.x + 1, this.y,
+			this.x + 1, this.y + 1,
 		];
 	}
 }
