@@ -37,27 +37,34 @@ function addData(data) {
 }
 
 function convertDataToPixel(data) {
-	if (data > 5599.9999) { return ([155,99,99,99]); }
-	if (data < -5599.9999) { return ([255,99,99,99]); }
+	if (data > MAX_DATA_VALUE) { return ([155,MAX_RGB_VALUES[1],MAX_RGB_VALUES[2],MAX_RGB_VALUES[3]]); }
+	if (data < -MAX_DATA_VALUE) { return ([255,MAX_RGB_VALUES[1],MAX_RGB_VALUES[2],MAX_RGB_VALUES[3]]); }
 
-	var tempData = Math.abs(data);
-	var dec = Math.round((tempData % 1) * 10000);
-	tempData = Math.floor(tempData);
+	var tempData = (data < 0) ? data * -1 : data;
+	var dec = (tempData % 1) * 10000;
+	dec = (dec - (dec << 0) < 0.5 ? (dec << 0) : ((dec + 1) << 0));
+	tempData = tempData << 0;
 	var g = tempData % 100;
-	var r = Math.floor(tempData / 100);
+	var r = (tempData / 100) << 0;
 	var a = dec % 100;
-	var b = Math.floor(dec / 100);
+	var b = (dec / 100) << 0;
 
 	if (data < 0) { return ([r + 200, g, b, a]); }
 	else { return ([r + 100, g, b, a]); }
 }
 
 function convertPixelToData(pixel) {
-	var tempData = (pixel[0] - (Math.floor(pixel[0] / 100) * 100)) * 100;
-	tempData += Math.round(pixel[1]/255*MAX_RGB_VALUES[1]) + (Math.round(pixel[2]/255*MAX_RGB_VALUES[2])/100) + (Math.round((pixel[3]/255*MAX_RGB_VALUES[3]))/10000);
+	var tempData = (pixel[0] - (((pixel[0] / 100) << 0) * 100)) * 100;
+	var roundG = pixel[1]/255*MAX_RGB_VALUES[1];
+	roundG = (roundG - (roundG << 0) < 0.5 ? (roundG << 0) : ((roundG + 1) << 0));
+	var roundB = pixel[2]/255*MAX_RGB_VALUES[2];
+	roundB = (roundB - (roundB << 0) < 0.5 ? (roundB << 0) : ((roundB + 1) << 0));
+	var roundA = pixel[3]/255*MAX_RGB_VALUES[3];
+	roundA = (roundA - (roundA << 0) < 0.5 ? (roundA << 0) : ((roundA + 1) << 0));
+	tempData += roundG + (roundB/100) + (roundA/10000);
 
-	if (Math.floor(pixel[0] / 100) == 1) { return tempData; }
-	if (Math.floor(pixel[0] / 100) == 2) { return -tempData; }
+	if (((pixel[0] / 100) << 0) == 1) { return tempData; }
+	if (((pixel[0] / 100) << 0) == 2) { return -tempData; }
 }
 
 function getPixel(x, y) {
