@@ -1,0 +1,2229 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dele",
+				"deleteMixedArray\t(Employee.h)"
+			],
+			[
+				"per",
+				"personArray"
+			],
+			[
+				"num",
+				"numEmployees"
+			],
+			[
+				"new",
+				"new_email"
+			],
+			[
+				"work",
+				"work_email"
+			],
+			[
+				"emai",
+				"work_email"
+			],
+			[
+				"sal",
+				"sal_change_rates"
+			],
+			[
+				"wor",
+				"work_email"
+			],
+			[
+				"cn",
+				"cnt_sal_changes"
+			],
+			[
+				"cnt",
+				"cnt_sal_changes\t(Employee.h)"
+			],
+			[
+				"perso",
+				"personalEmail"
+			],
+			[
+				"Em",
+				"Employee.h\t(testPersonEmployee.cpp)"
+			],
+			[
+				"sen",
+				"sentence"
+			],
+			[
+				"curre",
+				"currentLine"
+			],
+			[
+				"sente",
+				"sentence"
+			],
+			[
+				"sent",
+				"sentence"
+			],
+			[
+				"curr",
+				"currentLine"
+			],
+			[
+				"wordPai",
+				"wordPairMap"
+			],
+			[
+				"freq",
+				"freqWordpairMmap\t(fileIOs_wordPairs.cpp)"
+			],
+			[
+				"stirng",
+				"stringList"
+			],
+			[
+				"stirn",
+				"stringList"
+			],
+			[
+				"sec",
+				"second"
+			],
+			[
+				"word",
+				"wordPair"
+			],
+			[
+				"seco",
+				"secondWord"
+			],
+			[
+				"is",
+				"istringstream"
+			],
+			[
+				"first",
+				"firstWord"
+			],
+			[
+				"valid",
+				"validCharacter"
+			],
+			[
+				"vali",
+				"validCharacters"
+			],
+			[
+				"curren",
+				"currentSentence"
+			],
+			[
+				"senten",
+				"sentenceSplitter\t(fileIOs_wordPairs.h)"
+			],
+			[
+				"file",
+				"fileIOs_wordPairs.h\t(fileIOs_wordPairs.cpp)"
+			],
+			[
+				"frameSt",
+				"frameStart"
+			],
+			[
+				"frame",
+				"frameEnd"
+			],
+			[
+				"back",
+				"background4"
+			],
+			[
+				"Reca",
+				"RectangleTextured"
+			],
+			[
+				"Recta",
+				"RectangleTextured\t(s_entities.js)"
+			],
+			[
+				"SCREE",
+				"SCREEN_HEIGHT\t(joiner.js)"
+			],
+			[
+				"pla",
+				"platformList"
+			],
+			[
+				"plat",
+				"platformList"
+			],
+			[
+				"Gate",
+				"GatewayDrop\t(s_entities.js)"
+			],
+			[
+				"margi",
+				"margin-left\tproperty"
+			],
+			[
+				"vel",
+				"velocityY"
+			],
+			[
+				"Jum",
+				"JUMP_SPEED"
+			],
+			[
+				"leader",
+				"leaderboardText"
+			],
+			[
+				"acco",
+				"account_list"
+			],
+			[
+				"sent_T",
+				"sent_top_overall\t(server.js)"
+			],
+			[
+				"sent_top",
+				"sent_top_player\t(server.js)"
+			],
+			[
+				"getTop",
+				"getTopOverallAccounts"
+			],
+			[
+				"request_top",
+				"request_top_player\t(client.js)"
+			],
+			[
+				"net",
+				"network_game"
+			],
+			[
+				"collisionMa",
+				"collisionMarkerIndex"
+			],
+			[
+				"clie",
+				"clientList"
+			],
+			[
+				"increm",
+				"incrementPlayerScore"
+			],
+			[
+				"checkC",
+				"checkCollisionClient\t(player.js)"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"player",
+				"player_collected"
+			],
+			[
+				"marker",
+				"marker_collected"
+			],
+			[
+				"score",
+				"scoreDiv"
+			],
+			[
+				"clien",
+				"clientList"
+			],
+			[
+				"ga",
+				"gameState"
+			],
+			[
+				"PLAY",
+				"PLAYER_WIDTH\t(joiner.js)"
+			],
+			[
+				"center",
+				"centerX"
+			],
+			[
+				"plaf",
+				"platformList\t(joiner.js)"
+			],
+			[
+				"pl",
+				"platformList"
+			],
+			[
+				"cli",
+				"client_id"
+			],
+			[
+				"platf",
+				"platformList\t(joiner.js)"
+			],
+			[
+				"SCR",
+				"SCREEN_HEIGHT\t(engine.js)"
+			],
+			[
+				"appe",
+				"appendChild"
+			],
+			[
+				"accoun",
+				"accountDiv"
+			],
+			[
+				"usern",
+				"usernameText"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"conn",
+				"connect\t(engine.js)"
+			],
+			[
+				"instr",
+				"instruction-text\t(style.css)"
+			],
+			[
+				"pos",
+				"positionInterval"
+			],
+			[
+				"fram",
+				"frameStart"
+			],
+			[
+				"changeT",
+				"changeToBig"
+			],
+			[
+				"load",
+				"loadingTextExists"
+			],
+			[
+				"loa",
+				"loadingTextExists"
+			],
+			[
+				"previ",
+				"previousY"
+			],
+			[
+				"clin",
+				"clientList\t(server.js)"
+			],
+			[
+				"sock",
+				"socket_list"
+			],
+			[
+				"initia",
+				"initial_connection"
+			],
+			[
+				"sok",
+				"socket_id"
+			],
+			[
+				"velo",
+				"velocityY"
+			],
+			[
+				"scal",
+				"scaleWindow"
+			],
+			[
+				"handle",
+				"handleMinimap"
+			],
+			[
+				"indicator",
+				"indicator-order\t(joiner.js)"
+			],
+			[
+				"marg",
+				"margin-right\tproperty"
+			],
+			[
+				"padd",
+				"padding-left\tproperty"
+			],
+			[
+				"touch",
+				"touch_position"
+			],
+			[
+				"scale",
+				"scaleMin\t(engine.js)"
+			],
+			[
+				"SCRE",
+				"SCREEN_HEIGHT"
+			],
+			[
+				"camera",
+				"cameraSpeed"
+			],
+			[
+				"came",
+				"cameraSpeed"
+			],
+			[
+				"cam",
+				"cameraSpeed"
+			],
+			[
+				"input",
+				"input_list"
+			],
+			[
+				"wallBU",
+				"wallBufferTree"
+			],
+			[
+				"wall",
+				"wallBuffer"
+			],
+			[
+				"toggleDraw",
+				"toggleDrawOrder"
+			],
+			[
+				"canTo",
+				"canToggleMinimap"
+			],
+			[
+				"canTogg",
+				"canToggleMinimap"
+			],
+			[
+				"toggl",
+				"toggleMinimap"
+			],
+			[
+				"can",
+				"canToggleMinimap"
+			],
+			[
+				"THI",
+				"THIRD_PERSON_SCALE_Y"
+			],
+			[
+				"TH",
+				"THIRD_PERSON_SCALE_X"
+			],
+			[
+				"THIR",
+				"THIRD_PERSON_SCALE_X\t(geometry.js)"
+			],
+			[
+				"wa",
+				"wallBuffer"
+			],
+			[
+				"poi",
+				"pointB\t(first_person.js)"
+			],
+			[
+				"Texture",
+				"TEXTURE_2D\t(engine.js)"
+			],
+			[
+				"texture",
+				"textureIndex"
+			],
+			[
+				"rand",
+				"randomTextureIndex"
+			],
+			[
+				"text",
+				"texture_sheet\t(engine.js)"
+			],
+			[
+				"ima",
+				"imageList"
+			],
+			[
+				"wallBu",
+				"wallBufferTreeTexturedCorrected"
+			],
+			[
+				"indicator-texture-texture",
+				"indicator-texture-textured-interpolated\t(index.html)"
+			],
+			[
+				"link",
+				"linkNodeWithWallTexturedCorrected"
+			],
+			[
+				"progra",
+				"programList"
+			],
+			[
+				"Qu",
+				"QuadTextured"
+			],
+			[
+				"Arr",
+				"ARRAY_BUFFER"
+			],
+			[
+				"inp",
+				"input_list"
+			],
+			[
+				"paddi",
+				"padding-right\tproperty"
+			],
+			[
+				"border-lef",
+				"border-left\tproperty"
+			],
+			[
+				"alh",
+				"alpha-interval\t(first_person.js)"
+			],
+			[
+				"backgro",
+				"background-color\tproperty"
+			],
+			[
+				"toggleDr",
+				"toggleDrawMethod"
+			],
+			[
+				"cant",
+				"canToggleDrawOrder"
+			],
+			[
+				"Lin",
+				"LINES"
+			],
+			[
+				"border-",
+				"border-left-width\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "poly",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Compile Client/Server",
+					""
+				],
+				[
+					"Compile Client/Server",
+					"Compile Client"
+				],
+				[
+					"Compile Client/Server",
+					"Compile Server"
+				],
+				[
+					"Compile Client/Server",
+					"Launch Client"
+				],
+				[
+					"Compile Client/Server",
+					"Launch Server"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Compile Client/Server",
+				"Launch Client"
+			]
+		],
+		[
+			[
+				[
+					"Mood",
+					""
+				],
+				[
+					"Mood",
+					"Compile Client"
+				],
+				[
+					"Mood",
+					"Compile Editor"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Mood",
+				"Compile Client"
+			]
+		],
+		[
+			[
+				[
+					"Mood",
+					""
+				],
+				[
+					"Mood",
+					"Compile Client"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Mood",
+				"Compile Client"
+			]
+		],
+		[
+			[
+				[
+					"Nautilus",
+					""
+				],
+				[
+					"Nautilus",
+					"Compile Client"
+				],
+				[
+					"Nautilus",
+					"Compile Server"
+				],
+				[
+					"Nautilus",
+					"Compile Client/Server"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Nautilus",
+				"Compile Client"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/Java Compile.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java Run.sublime-build",
+					""
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				"Compile"
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/Java Compile.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java Run.sublime-build",
+					""
+				]
+			],
+			[
+				"SDL Project",
+				"Compile"
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"SDL Project",
+					"Compile Server"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				"Compile"
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"SDL Project",
+					"Compile Server"
+				],
+				[
+					"SDL Project",
+					"Compile Client/Server"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				"Compile"
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"SDL Project",
+					"Run"
+				],
+				[
+					"SDL Project",
+					"Single File"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"gdb"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/Java Compile.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java Run.sublime-build",
+					""
+				]
+			],
+			[
+				"SDL Project",
+				"gdb"
+			]
+		],
+		[
+			[
+				[
+					"Thane",
+					""
+				],
+				[
+					"Thane",
+					"Compile Client"
+				],
+				[
+					"Thane",
+					"Compile Server"
+				],
+				[
+					"Thane",
+					"Compile Client/Server"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Thane",
+				"Compile Client/Server"
+			]
+		],
+		[
+			[
+				[
+					"Visual-Computer",
+					""
+				],
+				[
+					"Visual-Computer",
+					"Compile Client"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Visual-Computer",
+				"Compile Client"
+			]
+		],
+		[
+			[
+				[
+					"poly",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"poly",
+				""
+			]
+		],
+		[
+			[
+				[
+					"text",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"text",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"a",
+				"Arithmetic"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"insta",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"colors",
+				"UI: Select Color Scheme"
+			],
+			[
+				"ar",
+				"Arithmetic"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			],
+			[
+				"rever",
+				"Permute Lines: Reverse"
+			],
+			[
+				"code",
+				"Code Time: Dashboard"
+			],
+			[
+				"co",
+				"Code Time: Dashboard"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"codeti",
+				"Code Time: Dashboard"
+			],
+			[
+				"codet",
+				"Code Time: Dashboard"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"browser",
+				"View In Browser"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"color sc",
+				"UI: Select Color Scheme"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"ari",
+				"Arithmetic"
+			],
+			[
+				"convert",
+				"Convert Case: Upper Case"
+			],
+			[
+				"caps",
+				"Convert Case: Upper Case"
+			],
+			[
+				"colorsc",
+				"UI: Select Color Scheme"
+			],
+			[
+				"theme",
+				"Colorsublime: Browse Themes Online"
+			],
+			[
+				"ui",
+				"UI: Select Theme"
+			],
+			[
+				"",
+				"BracketHighlighter: Enable Debug Mode"
+			],
+			[
+				"permu",
+				"Permute Lines: Unique"
+			],
+			[
+				"convert to",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"SORT",
+				"Sort Lines"
+			],
+			[
+				"shuff",
+				"Permute Lines: Shuffle"
+			],
+			[
+				"snippet",
+				"Snippet: template <typename ${1:_InputIter}>"
+			],
+			[
+				"font",
+				"Snippet: If Condition"
+			],
+			[
+				"tabs",
+				"View: Toggle Tabs"
+			],
+			[
+				"perm",
+				"Snippet: Enumeration"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"set syntax c++",
+				"Set Syntax: C++"
+			],
+			[
+				"set Syntax",
+				"Set Syntax: Textile"
+			],
+			[
+				"git",
+				"Set Syntax: Git Log"
+			],
+			[
+				"color sch",
+				"UI: Select Color Scheme"
+			],
+			[
+				"snipp",
+				"Snippet: Namespace"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"color s",
+				"UI: Select Color Scheme"
+			],
+			[
+				"colorsch",
+				"UI: Select Color Scheme"
+			],
+			[
+				"cololrs",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git ",
+				"Git: Status"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git pu",
+				"Git: Pull Using Rebase"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"hex",
+				"HexViewer: Toggle Hex View"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"git p",
+				"Git: Pull"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add All"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add ",
+				"Git: Add All"
+			],
+			[
+				"git diff",
+				"Git: Diff All Files"
+			],
+			[
+				"git add all",
+				"Git: Add All"
+			],
+			[
+				"git his",
+				"Git: Commit history"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"git commit me",
+				"Set Syntax: Git Commit Message"
+			],
+			[
+				"git Co",
+				"Git: Commit"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packet rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"linter",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"lint",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"g",
+				"GitGutter: Support Info"
+			],
+			[
+				"remove p",
+				"Package Control: Remove Package"
+			],
+			[
+				"mat",
+				"Material Theme: Configuration"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"matr",
+				"Material Theme: Configuration"
+			]
+		],
+		"width": 420.0
+	},
+	"console":
+	{
+		"height": 826.0,
+		"history":
+		[
+			"trace",
+			"help",
+			"adf",
+			"std::string",
+			"<string>",
+			"help",
+			"cd..",
+			"move",
+			"wordCount",
+			"tree",
+			"trace",
+			"python",
+			"for (int x = 0; x > 10; x++)",
+			"sdt::",
+			"help",
+			"trace",
+			"gdb",
+			"rand()",
+			"rand",
+			"#import <stdlib.h>",
+			"git"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Projects/FrameCalc"
+	],
+	"file_history":
+	[
+		"/C/Projects/TestBed/poly/Employee.cpp",
+		"/C/Projects/TestBed/poly/Employee.h",
+		"/C/Projects/TestBed/poly/Person.h",
+		"/C/Projects/TestBed/poly/Person.cpp",
+		"/C/Projects/TestBed/poly/testPersonEmployee.cpp",
+		"/C/Projects/TestBed/poly/project.sublime-project",
+		"/C/Projects/TestBed/text/SteveJobsSpeech2005.txt",
+		"/C/Projects/TestBed/text/fileIOs_wordPairs.h",
+		"/C/Projects/TestBed/text/test.txt",
+		"/C/Projects/TestBed/text/fileIOs_wordPairs.cpp",
+		"/C/Projects/TestBed/text/fileIOs_wordPairs_main.cpp",
+		"/C/Projects/TestBed/text/output.txt",
+		"/C/Projects/TestBed/text/project.sublime-project",
+		"/C/Users/William/AppData/Local/Temp/file_IOs.cpp.txt",
+		"/C/Users/William/Downloads/SteveJobsSpeech2005.txt",
+		"/C/Projects/TestBed/text/steve_jobs.txt",
+		"/C/Users/William/AppData/Local/Temp/SteveJobsSpeech2005.txt",
+		"/C/Projects/TestBed/text/main.cpp",
+		"/C/Projects/TestBed/lab1.cpp",
+		"/C/Projects/FreeTacos/index.html",
+		"/C/Projects/TestBed/2_29.cpp",
+		"/C/Projects/FreeTacos/style.css",
+		"/C/Projects/FreeTacos/src/client.js",
+		"/C/Projects/FreeTacos/server/server.js",
+		"/C/Projects/FreeTacos/src/geometry.js",
+		"/C/Projects/FreeTacos/src/joiner.js",
+		"/C/Projects/FreeTacos/src/engine.js",
+		"/C/Projects/FreeTacos/src/player.js",
+		"/C/Projects/FreeTacos/src/s_entities.js",
+		"/C/Projects/FreeTacos/src/shader_source.js",
+		"/C/Projects/FreeTacos/server/package.json",
+		"/C/Users/William/Desktop/test.py",
+		"/C/Projects/FreeTacos/server.js",
+		"/C/Users/William/Desktop/asdf.txt",
+		"/C/Projects/FreeTacos/server/Procfile",
+		"/C/Projects/FreeTacos/server/.gitignore",
+		"/C/Projects/FreeTacos/.gitignore",
+		"/C/Projects/SpotStop/.gitignore",
+		"/C/Projects/SpotStop/dist/depricated/leaderboard/js/leaderboard/p_entities.js",
+		"/C/Projects/Mood-Web/src/joiner.js",
+		"/C/Projects/Mood-Web/src/shader_source.js",
+		"/C/Projects/Mood-Web/src/third_person.js",
+		"/C/Projects/Mood-Web/src/engine.js",
+		"/C/Projects/Mood-Web/src/geometry.js",
+		"/C/Projects/Mood-Web/style.css",
+		"/C/Projects/Mood-Web/index.html",
+		"/C/Projects/Mood-Web/src/first_person.js",
+		"/C/Projects/Mood-Web/project.sublime-project",
+		"/C/Users/William/AppData/Local/Temp/citation-13430184.txt",
+		"/C/Users/William/AppData/Local/Temp/citation-271383193.bib.txt",
+		"/C/Users/William/AppData/Local/Temp/citation-271383193.txt",
+		"/C/Users/William/AppData/Local/Temp/citation-283497304.txt",
+		"/C/Users/William/AppData/Local/Temp/citation-271383193.ris.txt",
+		"/C/Users/William/Desktop/hellen.py",
+		"/C/Users/William/Desktop/scripts/test.js",
+		"/C/Users/William/Desktop/Coding Resources.txt",
+		"/C/Users/William/AppData/Roaming/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/C/Users/William/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Projects/Mood-Web/src/data_parse.js",
+		"/C/Users/William/Desktop/jquery_test.js",
+		"/C/Users/William/.software/CodeTime.txt",
+		"/C/Users/William/Downloads/dyArray.h",
+		"/C/Users/William/Downloads/dyArray-main.cpp",
+		"/C/Projects/Mood-Web/res/map.txt",
+		"/C/Projects/Mood-Web/public_html/src/geometry.js",
+		"/C/Projects/Mood-Web/public_html/src/shader_source.js",
+		"/C/Projects/Mood-Web/public_html/src/engine.js",
+		"/C/Projects/WebGL-Engine/project.sublime-project",
+		"/C/Projects/WebGL-Engine/project.sublime-workspace",
+		"/C/Projects/Mood-Web/public_html/index.html",
+		"/C/Projects/Mood-Web/public_html/src/rectangle.js",
+		"/C/Projects/Mood-Web/public_html/style.css",
+		"/C/Projects/Mood-Web/public_html/src/main.js",
+		"/C/Users/William/Desktop/Hellen Apply to these places NOW.txt",
+		"/C/Users/William/Desktop/yikes hellen",
+		"/C/Users/William/AppData/Roaming/Sublime Text 3/Packages/User/View In Browser.sublime-settings",
+		"/C/Users/William/AppData/Roaming/Sublime Text 3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/C/Projects/Mood-Web/public_html/main.js",
+		"/C/Projects/Mood-Web/public_html/site.css",
+		"/C/Projects/Mood-Web/public_html/main.javascript",
+		"/C/Projects/Mood-Web/store_hours.html",
+		"/C/Projects/Mood/project.sublime-project",
+		"/C/Projects/Mood/map.data",
+		"/C/Projects/Mood/color.data",
+		"/C/Projects/Mood/bsp_tree.data",
+		"/C/Libraries/glfw-3.2.1/docs/CMakeLists.txt",
+		"/C/Projects/Mood/src/third_person_bsp.cpp",
+		"/C/Projects/Mood/editor/src/joiner.h",
+		"/C/Projects/Mood/editor/src/vector2.cpp",
+		"/C/Projects/Mood/src/core/drawing.cpp",
+		"/C/Projects/Mood/src/joiner.cpp",
+		"/C/Projects/Mood/editor/src/joiner.cpp",
+		"/C/Projects/Mood/src/core/vector2.h",
+		"/C/Projects/Mood/src/core/drawing.h",
+		"/C/Projects/Mood/src/third_person.cpp",
+		"/C/Projects/Mood/src/first_person.cpp",
+		"/C/Projects/Mood/src/third_person_bsp.h",
+		"/C/Projects/Mood/engine.cpp",
+		"/C/Libraries/SOIL2/make/windows/Makefile",
+		"/C/Libraries/SOIL2/.hg_archival.txt",
+		"/C/Libraries/SOIL2/premake4.lua",
+		"/C/Libraries/glfw-3.2.1/bin/CMakeCache.txt",
+		"/C/Projects/Mood/src/first_person.h",
+		"/C/Projects/Mood/src/third_person_translated.cpp",
+		"/C/Projects/Mood/src/joiner.h",
+		"/C/Projects/Mood/src/third_person_translated.h",
+		"/C/Projects/Mood/src/wall.cpp",
+		"/C/Projects/Mood/src/wall.h",
+		"/C/Projects/Mood/engine.h",
+		"/C/Projects/Mood/editor/src/input.h",
+		"/C/Projects/Mood/editor/src/input.cpp",
+		"/C/Projects/Mood/editor/src/file.h",
+		"/C/Projects/Mood/editor/src/file.cpp",
+		"/C/Users/William/Downloads/DebugExample.java",
+		"/C/Projects/Mood/editor/src/vector2.h",
+		"/C/Projects/Mood/src/core/vector2.cpp",
+		"/C/Projects/Mood/src/core/input.cpp",
+		"/C/Projects/Mood/src/core/input.h",
+		"/C/Projects/Mood/editor/main.cpp",
+		"/C/Projects/Mood/editor/src/wall.cpp",
+		"/C/Projects/Mood/editor/src/wall.h",
+		"/C/Projects/Mood/editor/src/drawing.cpp",
+		"/C/Projects/Mood/editor/src/drawing.h",
+		"/C/Users/William/Desktop/names of assholes",
+		"/C/Projects/Mood/src/core/file.cpp",
+		"/C/Projects/Mood/src/sample",
+		"/C/Projects/Help/CSC510_FINAL/GUI.java",
+		"/C/Projects/Help/CSC510_FINAL/Main.java"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 172.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"clone",
+			"this->.",
+			"tempPerson",
+			"clone",
+			"this->",
+			"this",
+			"text",
+			"convertStringToValid",
+			"’",
+			"—",
+			"<a, and>",
+			":",
+			"red classes that didn’t interest me, and begin dropping in on the ones that looked interesting",
+			"that looked interesting",
+			"that looked interesting.",
+			"I could stop taking the required classes that didn’t interest me, and begin dropping in on the ones that looked interesting.",
+			"Let me give you one example:",
+			"currentLine",
+			"stream",
+			";\n",
+			"file",
+			":",
+			"”",
+			"“",
+			"lovers",
+			"it",
+			"freqWordPairMap",
+			"wordPairMap",
+			"convertStringToLower",
+			"validCharacters",
+			"+=",
+			"line",
+			"inFile",
+			"lab5",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I",
+			"i",
+			"I"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 210.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 61.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"emp",
+				"Employee.h"
+			],
+			[
+				"pers",
+				"Person.cpp"
+			],
+			[
+				"p",
+				"project.sublime-project"
+			],
+			[
+				"ou",
+				"output.txt"
+			],
+			[
+				"ste",
+				"SteveJobsSpeech2005.txt"
+			],
+			[
+				"pro",
+				"project.sublime-project"
+			],
+			[
+				"out",
+				"output.txt"
+			],
+			[
+				"s",
+				"SteveJobsSpeech2005.txt"
+			],
+			[
+				"te",
+				"test.txt"
+			],
+			[
+				"tes",
+				"test.txt"
+			],
+			[
+				"tex",
+				"steve_jobs.txt"
+			],
+			[
+				"text",
+				"test.txt"
+			],
+			[
+				"",
+				"steve_jobs.txt"
+			],
+			[
+				"cli",
+				"src\\client.js"
+			],
+			[
+				"server",
+				"server\\server.js"
+			],
+			[
+				"clie",
+				"src\\client.js"
+			],
+			[
+				"jo",
+				"src\\joiner.js"
+			],
+			[
+				"sha",
+				"src\\shader_source.js"
+			],
+			[
+				"eng",
+				"src\\engine.js"
+			],
+			[
+				"player",
+				"src\\player.js"
+			],
+			[
+				"geo",
+				"src\\geometry.js"
+			],
+			[
+				"s_e",
+				"src\\s_entities.js"
+			],
+			[
+				"css",
+				"style.css"
+			],
+			[
+				"engi",
+				"src\\engine.js"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"play",
+				"src\\player.js"
+			],
+			[
+				"s_",
+				"src\\s_entities.js"
+			],
+			[
+				"joi",
+				"src\\joiner.js"
+			],
+			[
+				"ser",
+				"server\\server.js"
+			],
+			[
+				"shad",
+				"src\\shader_source.js"
+			],
+			[
+				"shader",
+				"src\\shader_source.js"
+			],
+			[
+				"cl",
+				"src\\client.js"
+			],
+			[
+				"e",
+				"src\\engine.js"
+			],
+			[
+				"en",
+				"src\\engine.js"
+			],
+			[
+				"firs",
+				"src\\first_person.js"
+			],
+			[
+				"ge",
+				"src\\geometry.js"
+			],
+			[
+				"fi",
+				"src\\first_person.js"
+			],
+			[
+				"fir",
+				"src\\first_person.js"
+			],
+			[
+				"sh",
+				"src\\shader_source.js"
+			],
+			[
+				"in",
+				"index.html"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"da",
+				"src\\data_parse.js"
+			],
+			[
+				"pr",
+				"project.sublime-project"
+			],
+			[
+				"vect",
+				"src\\core\\vector2.h"
+			],
+			[
+				"main",
+				"main.cpp"
+			],
+			[
+				"tree",
+				"bsp_tree.data"
+			],
+			[
+				"colo",
+				"color.data"
+			],
+			[
+				".da",
+				"map.data"
+			],
+			[
+				"thir",
+				"src\\third_person_bsp.cpp"
+			],
+			[
+				"vec",
+				"editor\\src\\vector2.cpp"
+			],
+			[
+				"draw",
+				"src\\core\\drawing.cpp"
+			],
+			[
+				"first",
+				"src\\first_person.cpp"
+			],
+			[
+				"j",
+				"editor\\src\\joiner.cpp"
+			],
+			[
+				"th",
+				"src\\third_person.cpp"
+			],
+			[
+				"third",
+				"src\\third_person_translated.cpp"
+			],
+			[
+				"thi",
+				"src\\third_person_translated.cpp"
+			],
+			[
+				"join",
+				"editor\\src\\joiner.cpp"
+			],
+			[
+				"w",
+				"src\\wall.cpp"
+			],
+			[
+				"proj",
+				"project.sublime-project"
+			],
+			[
+				"wa",
+				"src\\wall.h"
+			],
+			[
+				"wall",
+				"src\\wall.h"
+			],
+			[
+				"inp",
+				"editor\\src\\input.h"
+			],
+			[
+				"ve",
+				"editor\\src\\vector2.cpp"
+			],
+			[
+				"mai",
+				"editor\\main.cpp"
+			],
+			[
+				"fil",
+				"src\\core\\file.cpp"
+			],
+			[
+				"dr",
+				"src\\core\\drawing.cpp"
+			],
+			[
+				"ma",
+				"main.cpp"
+			],
+			[
+				"sa",
+				"src\\sample"
+			],
+			[
+				"timer",
+				"src\\core\\timer.h"
+			],
+			[
+				"con",
+				"src\\core\\configuration.cpp"
+			],
+			[
+				"wal",
+				"src\\wall.h"
+			],
+			[
+				"thirdP",
+				"src\\third_person_translated.h"
+			],
+			[
+				"dra",
+				"src\\core\\drawing.h"
+			],
+			[
+				"data",
+				"src\\datas.h"
+			],
+			[
+				"cp",
+				"src\\cpu.h"
+			],
+			[
+				"cpu.cp",
+				"src\\cpu.cpp"
+			],
+			[
+				"ti",
+				"src\\core\\timer.h"
+			],
+			[
+				"cpu",
+				"src\\cpu.cpp"
+			],
+			[
+				"drw",
+				"src\\core\\drawing.h"
+			],
+			[
+				"confi",
+				"src\\core\\configuration.cpp"
+			],
+			[
+				"nau",
+				"src\\nautilus.h"
+			],
+			[
+				"na",
+				"src\\nautilus.h"
+			],
+			[
+				"dumm",
+				"src\\dummy.h"
+			],
+			[
+				"re",
+				"src\\rectangle_index.h"
+			],
+			[
+				"du",
+				"src\\dummy.h"
+			],
+			[
+				"sta",
+				"src\\stats.cpp"
+			],
+			[
+				"stat",
+				"src\\stats.cpp"
+			],
+			[
+				"wo",
+				"src\\world.cpp"
+			],
+			[
+				"i",
+				"src\\core\\input.h"
+			],
+			[
+				"ca",
+				"src\\camera.h"
+			],
+			[
+				"n",
+				"src\\nautilus.cpp"
+			],
+			[
+				"recta",
+				"src\\rectangle_index.h"
+			],
+			[
+				"world",
+				"src\\world.cpp"
+			],
+			[
+				"wor",
+				"src\\world.cpp"
+			],
+			[
+				"naut",
+				"src\\nautilus.h"
+			],
+			[
+				"gui",
+				"src\\gui.cpp"
+			],
+			[
+				"rect",
+				"src\\rectangle_index.cpp"
+			],
+			[
+				"conf",
+				"src\\core\\configuration.h"
+			],
+			[
+				"cm",
+				"src\\camera.h"
+			],
+			[
+				"boar",
+				"src\\board\\board.h"
+			],
+			[
+				"board",
+				"src\\board\\board.cpp"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"config",
+				"src\\core\\configuration.h"
+			],
+			[
+				"camer",
+				"src\\camera.h"
+			],
+			[
+				"inpu",
+				"src\\core\\input.cpp"
+			],
+			[
+				"track",
+				"src\\track\\track_editor.cpp"
+			],
+			[
+				"tracke",
+				"src\\track\\track_editor.h"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"prof",
+				"src\\board\\profile.h"
+			],
+			[
+				"wheel",
+				"src\\board\\wheel_presets.h"
+			],
+			[
+				"profi",
+				"src\\board\\profile.h"
+			],
+			[
+				"whee",
+				"src\\board\\wheel.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 1000.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Projects\\Objective-Neural-Network\\project.sublime-project"
+			]
+		],
+		"width": 760.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 138.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
