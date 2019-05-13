@@ -1,22 +1,54 @@
-var gl;
+const MAX_RGB_VALUES = [255,99,99,99];
 const SCREEN_WIDTH = 200;
 const SCREEN_HEIGHT = 200;
 
+var gl;
 var programList = [];
+var pixelDataList = [];
+var currentDataCoord = [0,0];
 
 function initialize() {
 	var canvas = document.getElementById("glCanvas");
 	gl = canvas.getContext("experimental-webgl");
+	gl.enable(gl.BLEND);
+	gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
 	programList.push(createProgram(VERTEX_SHADER_1, FRAGMENT_SHADER_1));
 
-	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-	gl.clearColor(0.0, 0.0, 0.0, 1.0);
+	gl.clearColor(0.0, 0.0, 0.0, 0.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-	point = new Point(0, 0, [255,0,0,255]); point.draw();
+	for (var x = 0; x < 1000; x++) { addData(59.12); }
 
-	console.log(getPixel(0,0));
+	pixelDataList.forEach(pixel => { pixel.draw(); });
+}
+
+function addData(data) {
+	var rgba = convertData(data);
+	pixelDataList.push(new Point(currentDataCoord[0], currentDataCoord[1], [rgba[0],rgba[1],rgba[2],rgba[3]]));
+
+	if (currentDataCoord[0] == gl.canvas.width - 1) {
+		currentDataCoord[0] = 0;
+		currentDataCoord[1] += 1;
+	}
+	else { currentDataCoord[0] += 1; }
+}
+
+function convertData(data) {
+	if (data > 5599.9999) { return ([155,99,99,99]); }
+	if (data < -5599.9999) { return ([255,99,99,99]); }
+
+	var tempData = Math.abs(data);
+	var dec = Math.floor((tempData % 1) * 10000);
+	tempData = Math.floor(tempData);
+	var g = tempData % 100;
+	var r = Math.floor(tempData / 100);
+	var a = dec % 100;
+	var b = Math.floor(dec / 100);
+
+	if (data < 0) { return ([r + 200, g, b, a]); }
+	else { return ([r + 100, g, b, a]); }
 }
 
 function getPixel(x, y) {
@@ -41,44 +73,4 @@ function createProgram(vertexSource, fragmentSource) {
 	gl.linkProgram(program);
 
 	return program;
-}
-
-function denormalizeColor(color) {
-	return [color[0] / 255.0, color[1] / 255.0, color[2] / 255.0, color[3] / 255.0];
-}
-
-function Point(x, y, color = [255,0,0,255]) {
-	this.x = x;
-	this.y = y;
-	this.color = color;
-
-	this.program = programList[0];
-
-	this.positionAttributeLocation = gl.getAttribLocation(this.program, 'position');
-	this.resolutionLocation = gl.getUniformLocation(this.program, 'resolution');
-	this.colorLocation = gl.getUniformLocation(this.program, 'color');
-
-	this.positionBuffer = gl.createBuffer();
-
-	this.draw = () => {
-		gl.useProgram(this.program);
-		gl.enableVertexAttribArray(this.positionAttributeLocation);
-		gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getPositionArray()), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(this.positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
-		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
-		gl.uniform4fv(this.colorLocation, denormalizeColor(this.color));
-		gl.drawArrays(gl.TRIANGLES, 0, 6);
-	}
-
-	this.getPositionArray = () => {
-		return [
-			this.x, this.y,
-			this.x + 1, this.y,
-			this.x, this.y + 1,
-			this.x, this.y + 1,
-			this.x + 1, this.y,
-			this.x + 1, this.y + 1,
-		];
-	}
 }
