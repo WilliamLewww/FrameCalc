@@ -28,8 +28,12 @@ function Point(x, y, color) {
 
 	this.getPositionArray = () => {
 		return [
-			this.x, this.y, this.x + 1, this.y, this.x, this.y + 1,
-			this.x, this.y + 1, this.x + 1, this.y, this.x + 1, this.y + 1,
+			this.x, this.y, 
+			this.x + 1, this.y, 
+			this.x, this.y + 1,
+			this.x, this.y + 1, 
+			this.x + 1, this.y, 
+			this.x + 1, this.y + 1,
 		];
 	}
 }
@@ -60,7 +64,7 @@ function PointTest(x, y) {
 		gl.vertexAttribPointer(this.colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
 		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
-		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 8);
 	}
 
 	this.getPositionArray = () => {
@@ -69,8 +73,12 @@ function PointTest(x, y) {
 			this.x, this.y + 1,
 			this.x + 1, this.y,
 			this.x + 1, this.y + 1,
+
 			this.x + 2, this.y,
 			this.x + 2, this.y + 1,
+
+			this.x + 3, this.y,
+			this.x + 3, this.y + 1,
 		];
 	}
 
@@ -79,10 +87,49 @@ function PointTest(x, y) {
 			1.0, 0.0, 0.0, 1.0,
 			1.0, 0.0, 0.0, 1.0,
 			1.0, 0.0, 0.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
 
 			0.0, 0.0, 1.0, 1.0,
-			0.0, 0.0, 1.0, 1.0,
-			0.0, 0.0, 1.0, 1.0,
+			0.0, 1.0, 0.0, 1.0,
+
+			0.0, 1.0, 0.0, 1.0,
+			0.0, 1.0, 0.0, 1.0,
 		];
+	}
+}
+
+function PixelBuffer() {
+	var vertexCount = 0;
+	var positionArray = [];
+	var colorArray = [];
+	var currentDataCoord = [0,0];
+
+	var program = programList[1];
+
+	var positionBuffer = gl.createBuffer();
+	var colorBuffer = gl.createBuffer();
+	var positionAttributeLocation = gl.getAttribLocation(program, 'position');
+	var colorAttributeLocation = gl.getAttribLocation(program, 'a_color');
+	var resolutionLocation = gl.getUniformLocation(program, 'resolution');
+
+	this.render = () => {
+		gl.useProgram(program);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+		gl.enableVertexAttribArray(positionAttributeLocation);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray), gl.STATIC_DRAW);
+		gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+		gl.enableVertexAttribArray(colorAttributeLocation);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray), gl.STATIC_DRAW);
+		gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+
+		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, vertexCount);
+	}
+
+	this.pushData = (data) => {
+		
 	}
 }

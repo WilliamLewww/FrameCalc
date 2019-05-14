@@ -22,7 +22,7 @@ const FRAGMENT_SHADER_DEFAULT = [
 '}															\n',
 ].join('');
 
-const VERTEX_SHADER_PIXEL_DRAW_BUFFER = [
+const VERTEX_SHADER_PIXEL_TEST = [
 'attribute vec2 position;								 	\n',
 'attribute vec4 a_color; 									\n',
 '															\n',
@@ -41,7 +41,7 @@ const VERTEX_SHADER_PIXEL_DRAW_BUFFER = [
 '}														 	\n',
 ].join('');
 
-const FRAGMENT_SHADER_PIXEL_DRAW_BUFFER = [
+const FRAGMENT_SHADER_PIXEL_TEST = [
 'precision mediump float;									\n',
 '															\n',
 'varying vec4 v_color;										\n',

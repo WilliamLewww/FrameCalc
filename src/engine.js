@@ -5,8 +5,6 @@ const SCREEN_HEIGHT = 200;
 
 var gl;
 var programList = [];
-var pixelDataList = [];
-var currentDataCoord = [0,0];
 
 function initialize() {
 	var canvas = document.getElementById("glCanvas");
@@ -14,34 +12,17 @@ function initialize() {
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
 	programList.push(createProgram(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
-	programList.push(createProgram(VERTEX_SHADER_PIXEL_DRAW_BUFFER, FRAGMENT_SHADER_PIXEL_DRAW_BUFFER));
+	programList.push(createProgram(VERTEX_SHADER_PIXEL_TEST, FRAGMENT_SHADER_PIXEL_TEST));
 	
 	gl.clearColor(0.0, 0.0, 0.0, 0.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-	for (var x = 0; x < 1; x++) { addData(Math.floor(Math.random()*(55999999+55999999+1)-55999999)/10000); }
-
-	// pixelDataList.forEach(pixel => { pixel.draw(); });
-	//console.log(convertPixelToData(getPixel(0,0)));
-
 	var pointTest = new PointTest(0,0);
 	pointTest.draw();
+
 	console.log(getPixel(0,0));
 	console.log(getPixel(1,0));
 	console.log(getPixel(2,0));
-	console.log(getPixel(0,1));
-}
-
-function addData(data) {
-	var rgba = convertDataToPixel(data);
-	// console.log(data + ":" + rgba);
-	pixelDataList.push(new Point(currentDataCoord[0], currentDataCoord[1], [rgba[0],rgba[1],rgba[2],rgba[3]]));
-
-	if (currentDataCoord[0] == gl.canvas.width - 1) {
-		currentDataCoord[0] = 0;
-		currentDataCoord[1] += 1;
-	}
-	else { currentDataCoord[0] += 1; }
 }
 
 function convertDataToPixel(data) {
