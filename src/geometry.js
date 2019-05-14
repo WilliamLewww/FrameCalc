@@ -98,8 +98,10 @@ function PointTest(x, y) {
 	}
 }
 
+//positionArray.slice((8+(4*(gl.canvas.width-1)))*x,(8+(4*(gl.canvas.width-1)))*(x+1));
+// .slice((8+(4*(gl.canvas.width-1)))*x,((8+(4*(gl.canvas.width-1)))*x)+(4*currentDataCoord[0]))
+// .slice((4+(2*(gl.canvas.width-1)))*x,((4+(2*(gl.canvas.width-1)))*x)+(8*currentDataCoord[0]))
 function PixelBuffer() {
-	var vertexCount = 0;
 	var positionArray = [];
 	var colorArray = [];
 	var currentDataCoord = [0,0];
@@ -115,21 +117,66 @@ function PixelBuffer() {
 	this.render = () => {
 		gl.useProgram(program);
 
-		gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-		gl.enableVertexAttribArray(positionAttributeLocation);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+		for (var x = 0; x <= currentDataCoord[1]; x++) {
+			if (x == currentDataCoord[1]) {
+				if(currentDataCoord[0] != 0) {
+					gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+					gl.enableVertexAttribArray(positionAttributeLocation);
+					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(gl.canvas.width-1)))*x,((8+(4*(gl.canvas.width-1)))*x)+(4*currentDataCoord[0]))), gl.STATIC_DRAW);
+					gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
 
-		gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-		gl.enableVertexAttribArray(colorAttributeLocation);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+					gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+					gl.enableVertexAttribArray(colorAttributeLocation);
+					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(gl.canvas.width-1)))*x,((16+(8*(gl.canvas.width-1)))*x)+(8*currentDataCoord[0]))), gl.STATIC_DRAW);
+					gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
-		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
-		gl.drawArrays(gl.TRIANGLE_STRIP, 0, vertexCount);
+					gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
+					gl.drawArrays(gl.TRIANGLE_STRIP, 0, currentDataCoord[0] * 2);
+				}
+			}
+			else {
+				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+				gl.enableVertexAttribArray(positionAttributeLocation);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(gl.canvas.width-1)))*x,((8+(4*(gl.canvas.width-1)))*x)+(8+(4*(gl.canvas.width-1)))*(x+1))), gl.STATIC_DRAW);
+				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+				gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+				gl.enableVertexAttribArray(colorAttributeLocation);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(gl.canvas.width-1)))*x,((16+(8*(gl.canvas.width-1)))*x)+(16+(8*(gl.canvas.width-1)))*(x+1))), gl.STATIC_DRAW);
+				gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+
+				gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
+				gl.drawArrays(gl.TRIANGLE_STRIP, 0, (gl.canvas.width*2) + 2);
+			}
+		}
 	}
 
 	this.pushData = (data) => {
-		
+		if (currentDataCoord[0] >= gl.canvas.width + 1) {
+			currentDataCoord[0] = 0; currentDataCoord[1] += 1;
+		}
+
+		if (currentDataCoord[0] == 0) {
+			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1]);
+			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1] + 1);
+			positionArray.push(currentDataCoord[0] + 1); positionArray.push(currentDataCoord[1]);
+			positionArray.push(currentDataCoord[0] + 1); positionArray.push(currentDataCoord[1] + 1);
+
+			colorArray.push(1.0,0.0,0.0,1.0);
+			colorArray.push(1.0,0.0,0.0,1.0);
+			colorArray.push(1.0,0.0,0.0,1.0);
+			colorArray.push(1.0,0.0,0.0,1.0);		//needs to match currentDataCoord[0 + 1]
+
+			currentDataCoord[0] += 2;
+		}
+		else {
+			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1]);
+			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1] + 1);
+
+			colorArray.push(1.0,0.0,0.0,1.0);
+			colorArray.push(1.0,0.0,0.0,1.0);		//needs to match currentDataCoord[0 + 1]
+
+			currentDataCoord[0] += 1;
+		}
 	}
 }

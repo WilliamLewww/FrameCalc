@@ -16,13 +16,17 @@ function initialize() {
 	
 	gl.clearColor(0.0, 0.0, 0.0, 0.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+	var point = new PointTest(0,100);
+	point.draw();
 
-	var pointTest = new PointTest(0,0);
-	pointTest.draw();
+	var pixelBuffer = new PixelBuffer();
+	for (var x = 0; x < 250; x++) {
+		pixelBuffer.pushData();
+	}
+	pixelBuffer.render();
 
-	console.log(getPixel(0,0));
-	console.log(getPixel(1,0));
-	console.log(getPixel(2,0));
+	console.log(getPixel(gl.canvas.width - 1,0));
+	console.log(getPixel(0,1));
 }
 
 function convertDataToPixel(data) {
