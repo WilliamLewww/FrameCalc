@@ -33,3 +33,73 @@ function Point(x, y, color) {
 		];
 	}
 }
+
+function PointTest(x, y) {
+	this.x = x;
+	this.y = y;
+
+	this.program = programList[1];
+
+	this.positionBuffer = gl.createBuffer();
+	this.colorBuffer = gl.createBuffer();
+	this.positionAttributeLocation = gl.getAttribLocation(this.program, 'position');
+	this.colorAttributeLocation = gl.getAttribLocation(this.program, 'a_color');
+	this.resolutionLocation = gl.getUniformLocation(this.program, 'resolution');
+
+	this.draw = () => {
+		gl.useProgram(this.program);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
+		gl.enableVertexAttribArray(this.positionAttributeLocation);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getPositionArray()), gl.STATIC_DRAW);
+		gl.vertexAttribPointer(this.positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, this.colorBuffer);
+		gl.enableVertexAttribArray(this.colorAttributeLocation);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getColorArray()), gl.STATIC_DRAW);
+		gl.vertexAttribPointer(this.colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+
+		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
+		gl.drawArrays(gl.TRIANGLES, 0, 12);
+	}
+
+	this.getPositionArray = () => {
+		return [
+			this.x, this.y, 
+			this.x + 1, this.y, 
+			this.x, this.y + 1,
+
+			this.x, this.y + 1, 
+			this.x + 1, this.y, 
+			this.x + 1, this.y + 1,
+
+			this.x + 1, this.y, 
+			this.x + 2, this.y, 
+			this.x + 1, this.y + 1,
+
+			this.x + 1, this.y + 1, 
+			this.x + 2, this.y, 
+			this.x + 2, this.y + 1,
+		];
+	}
+
+	this.getColorArray = () => {
+		return [
+			1.0, 0.0, 0.0, 1.0,
+			1.0, 0.0, 0.0, 1.0,
+			1.0, 0.0, 0.0, 1.0,
+
+			1.0, 0.0, 0.0, 1.0,
+			1.0, 0.0, 0.0, 1.0,
+			1.0, 0.0, 0.0, 1.0,
+
+			0.0, 0.0, 1.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
+
+			0.0, 0.0, 1.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
+		];
+	}
+}
