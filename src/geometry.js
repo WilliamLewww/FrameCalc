@@ -60,25 +60,16 @@ function PointTest(x, y) {
 		gl.vertexAttribPointer(this.colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
 		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
-		gl.drawArrays(gl.TRIANGLES, 0, 12);
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
 	}
 
 	this.getPositionArray = () => {
 		return [
 			this.x, this.y, 
-			this.x + 1, this.y, 
 			this.x, this.y + 1,
-
-			this.x, this.y + 1, 
-			this.x + 1, this.y, 
+			this.x + 1, this.y,
 			this.x + 1, this.y + 1,
-
-			this.x + 1, this.y, 
-			this.x + 2, this.y, 
-			this.x + 1, this.y + 1,
-
-			this.x + 1, this.y + 1, 
-			this.x + 2, this.y, 
+			this.x + 2, this.y,
 			this.x + 2, this.y + 1,
 		];
 	}
@@ -88,14 +79,6 @@ function PointTest(x, y) {
 			1.0, 0.0, 0.0, 1.0,
 			1.0, 0.0, 0.0, 1.0,
 			1.0, 0.0, 0.0, 1.0,
-
-			1.0, 0.0, 0.0, 1.0,
-			1.0, 0.0, 0.0, 1.0,
-			1.0, 0.0, 0.0, 1.0,
-
-			0.0, 0.0, 1.0, 1.0,
-			0.0, 0.0, 1.0, 1.0,
-			0.0, 0.0, 1.0, 1.0,
 
 			0.0, 0.0, 1.0, 1.0,
 			0.0, 0.0, 1.0, 1.0,
