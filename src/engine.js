@@ -18,7 +18,7 @@ function initialize() {
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 	
 	var pixelBuffer = new PixelBuffer();
-	for (var x = 0; x < 250; x++) {
+	for (var x = 0; x < SCREEN_WIDTH*SCREEN_HEIGHT; x++) {
 		pixelBuffer.pushData(Math.floor(Math.random()*(55999999+55999999+1)-55999999)/10000);
 	}
 	pixelBuffer.render();
