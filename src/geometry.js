@@ -1,42 +1,5 @@
-function denormalizeColor(color) {
-	return [color[0] / MAX_RGB_VALUES[0], color[1] / MAX_RGB_VALUES[1], color[2] / MAX_RGB_VALUES[2], color[3] / MAX_RGB_VALUES[3]];
-}
-
-function Point(x, y, color) {
-	this.x = x;
-	this.y = y;
-	this.color = color;
-
-	this.program = programList[0];
-
-	this.positionAttributeLocation = gl.getAttribLocation(this.program, 'position');
-	this.resolutionLocation = gl.getUniformLocation(this.program, 'resolution');
-	this.colorLocation = gl.getUniformLocation(this.program, 'color');
-
-	this.positionBuffer = gl.createBuffer();
-
-	this.draw = () => {
-		gl.useProgram(this.program);
-		gl.enableVertexAttribArray(this.positionAttributeLocation);
-		gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getPositionArray()), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(this.positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
-		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
-		gl.uniform4fv(this.colorLocation, denormalizeColor(this.color));
-		gl.drawArrays(gl.TRIANGLES, 0, 6);
-	}
-
-	this.getPositionArray = () => {
-		return [
-			this.x, this.y, 
-			this.x + 1, this.y, 
-			this.x, this.y + 1,
-			this.x, this.y + 1, 
-			this.x + 1, this.y, 
-			this.x + 1, this.y + 1,
-		];
-	}
-}
+function normalizePixel(pixel) { return [pixel[0] / 255, pixel[1] / 255, pixel[2] / 255, pixel[3] / 255]; }
+function denormalizePixel(pixel) { return [pixel[0] * 255, pixel[1] * 255, pixel[2] * 255, pixel[3] * 255]; }
 
 function PointTest(x, y) {
 	this.x = x;
@@ -87,20 +50,17 @@ function PointTest(x, y) {
 			1.0, 0.0, 0.0, 1.0,
 			1.0, 0.0, 0.0, 1.0,
 			1.0, 0.0, 0.0, 1.0,
-			0.0, 0.0, 1.0, 1.0,
-
-			0.0, 0.0, 1.0, 1.0,
 			0.0, 1.0, 0.0, 1.0,
 
 			0.0, 1.0, 0.0, 1.0,
-			0.0, 1.0, 0.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
+
+			0.0, 0.0, 1.0, 1.0,
+			0.0, 0.0, 1.0, 1.0,
 		];
 	}
 }
 
-//positionArray.slice((8+(4*(gl.canvas.width-1)))*x,(8+(4*(gl.canvas.width-1)))*(x+1));
-// .slice((8+(4*(gl.canvas.width-1)))*x,((8+(4*(gl.canvas.width-1)))*x)+(4*currentDataCoord[0]))
-// .slice((4+(2*(gl.canvas.width-1)))*x,((4+(2*(gl.canvas.width-1)))*x)+(8*currentDataCoord[0]))
 function PixelBuffer() {
 	var positionArray = [];
 	var colorArray = [];
@@ -114,7 +74,10 @@ function PixelBuffer() {
 	var colorAttributeLocation = gl.getAttribLocation(program, 'a_color');
 	var resolutionLocation = gl.getUniformLocation(program, 'resolution');
 
+	var pointTest = new PointTest(-3,0);
+
 	this.render = () => {
+		pointTest.draw();
 		gl.useProgram(program);
 
 		for (var x = 0; x <= currentDataCoord[1]; x++) {
@@ -152,6 +115,8 @@ function PixelBuffer() {
 	}
 
 	this.pushData = (data) => {
+		var pixel = normalizePixel(convertDataToPixel(data));
+
 		if (currentDataCoord[0] >= gl.canvas.width + 1) {
 			currentDataCoord[0] = 0; currentDataCoord[1] += 1;
 		}
@@ -162,10 +127,10 @@ function PixelBuffer() {
 			positionArray.push(currentDataCoord[0] + 1); positionArray.push(currentDataCoord[1]);
 			positionArray.push(currentDataCoord[0] + 1); positionArray.push(currentDataCoord[1] + 1);
 
-			colorArray.push(1.0,0.0,0.0,1.0);
-			colorArray.push(1.0,0.0,0.0,1.0);
-			colorArray.push(1.0,0.0,0.0,1.0);
-			colorArray.push(1.0,0.0,0.0,1.0);		//needs to match currentDataCoord[0 + 1]
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
 
 			currentDataCoord[0] += 2;
 		}
@@ -173,8 +138,10 @@ function PixelBuffer() {
 			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1]);
 			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1] + 1);
 
-			colorArray.push(1.0,0.0,0.0,1.0);
-			colorArray.push(1.0,0.0,0.0,1.0);		//needs to match currentDataCoord[0 + 1]
+			colorArray.pop();colorArray.pop();colorArray.pop();colorArray.pop();
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
 
 			currentDataCoord[0] += 1;
 		}

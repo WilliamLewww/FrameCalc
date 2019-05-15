@@ -16,17 +16,14 @@ function initialize() {
 	
 	gl.clearColor(0.0, 0.0, 0.0, 0.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-	var point = new PointTest(0,100);
-	point.draw();
-
+	
 	var pixelBuffer = new PixelBuffer();
 	for (var x = 0; x < 250; x++) {
-		pixelBuffer.pushData();
+		pixelBuffer.pushData(Math.floor(Math.random()*(55999999+55999999+1)-55999999)/10000);
 	}
 	pixelBuffer.render();
 
-	console.log(getPixel(gl.canvas.width - 1,0));
-	console.log(getPixel(0,1));
+	console.log(convertPixelToData(getPixel(0,0)));
 }
 
 function convertDataToPixel(data) {
@@ -48,12 +45,9 @@ function convertDataToPixel(data) {
 
 function convertPixelToData(pixel) {
 	var tempData = (pixel[0] - (((pixel[0] / 100) << 0) * 100)) * 100;
-	var roundG = pixel[1]/255*MAX_RGB_VALUES[1];
-	roundG = (roundG - (roundG << 0) < 0.5 ? (roundG << 0) : ((roundG + 1) << 0));
-	var roundB = pixel[2]/255*MAX_RGB_VALUES[2];
-	roundB = (roundB - (roundB << 0) < 0.5 ? (roundB << 0) : ((roundB + 1) << 0));
-	var roundA = pixel[3]/255*MAX_RGB_VALUES[3];
-	roundA = (roundA - (roundA << 0) < 0.5 ? (roundA << 0) : ((roundA + 1) << 0));
+	var roundG = (pixel[1] - (pixel[1] << 0) < 0.5 ? (pixel[1] << 0) : ((pixel[1] + 1) << 0));
+	var roundB = (pixel[2] - (pixel[2] << 0) < 0.5 ? (pixel[2] << 0) : ((pixel[2] + 1) << 0));
+	var roundA = (pixel[3] - (pixel[3] << 0) < 0.5 ? (pixel[3] << 0) : ((pixel[3] + 1) << 0));
 	tempData += roundG + (roundB/100) + (roundA/10000);
 
 	if (((pixel[0] / 100) << 0) == 1) { return tempData; }
