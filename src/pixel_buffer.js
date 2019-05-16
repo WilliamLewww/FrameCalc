@@ -5,7 +5,7 @@ function PointTest(x, y) {
 	this.x = x;
 	this.y = y;
 
-	this.program = programList[1];
+	this.program = programList[SHADER_SOURCE.BUFFER];
 
 	this.positionBuffer = gl.createBuffer();
 	this.colorBuffer = gl.createBuffer();
@@ -66,7 +66,7 @@ function PixelBuffer() {
 	var colorArray = [];
 	var currentDataCoord = [0,0];
 
-	var program = programList[1];
+	var program = programList[SHADER_SOURCE.BUFFER];
 
 	var positionBuffer = gl.createBuffer();
 	var colorBuffer = gl.createBuffer();

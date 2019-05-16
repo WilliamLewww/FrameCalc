@@ -519,6 +519,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/pixel_buffer.js",
+			"settings":
+			{
+				"buffer_size": 5663,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/shader_source.js",
+			"settings":
+			{
+				"buffer_size": 1609,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "poly",
 	"build_system_choices":
@@ -1671,8 +1687,66 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/pixel_buffer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1667,
+								1667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/shader_source.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1609,
+								1609
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1736,6 +1810,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"sha",
+				"src\\shader_source.js"
+			],
+			[
+				"pix",
+				"src\\pixel_buffer.js"
+			],
 			[
 				"emp",
 				"Employee.h"
@@ -1803,10 +1885,6 @@
 			[
 				"jo",
 				"src\\joiner.js"
-			],
-			[
-				"sha",
-				"src\\shader_source.js"
 			],
 			[
 				"eng",

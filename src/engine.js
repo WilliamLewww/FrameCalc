@@ -1,3 +1,5 @@
+const SHADER_SOURCE = { "DEFAULT": 0, "BUFFER": 1 };
+
 const MAX_DATA_VALUE = 5599.9999;
 const MAX_RGB_VALUES = [255,99,99,99];
 const SCREEN_WIDTH = 200;
@@ -12,7 +14,7 @@ function initialize() {
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
 	programList.push(createProgram(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
-	programList.push(createProgram(VERTEX_SHADER_PIXEL_TEST, FRAGMENT_SHADER_PIXEL_TEST));
+	programList.push(createProgram(VERTEX_SHADER_PIXEL_BUFFER, FRAGMENT_SHADER_PIXEL_BUFFER));
 	
 	gl.clearColor(0.0, 0.0, 0.0, 0.0);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
