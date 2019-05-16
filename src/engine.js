@@ -22,11 +22,13 @@ function initialize() {
 	var pixelBuffer = new PixelBuffer();
 	for (var x = 0; x < 5; x++) {
 		var data = Math.floor(Math.random()*(55999999+55999999+1)-55999999)/10000;
-		pixelBuffer.pushMatrix([data], 1, 1);
+		pixelBuffer.pushMatrix([data,data,data,data], 2, 2);
 	}
 	pixelBuffer.render();
 
-	console.log(pixelBuffer.getData(0));
+	console.log(pixelBuffer.getData(0)[0]);
+	console.log(pixelBuffer.getData(1)[0]);
+	console.log(pixelBuffer.getData(2)[0]);
 	console.log(convertPixelToData(getPixel(0,0)));
 }
 

@@ -190,7 +190,7 @@ function PixelBuffer() {
 			}
 		}
 
-		dataArray.push([[currentDataCoord[0] - 2, currentDataCoord[1]], rows, cols]);
+		dataArray.push([[currentDataCoord[0] - (cols * rows) - 1, currentDataCoord[1]], rows, cols]);
 	}
 
 	this.getData = (index) => { return dataArray[index]; }
