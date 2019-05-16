@@ -62,6 +62,7 @@ function PointTest(x, y) {
 }
 
 function PixelBuffer() {
+	var dataArray = [];
 	var positionArray = [];
 	var colorArray = [];
 	var currentDataCoord = [0,0];
@@ -114,7 +115,7 @@ function PixelBuffer() {
 		}
 	}
 
-	this.pushData = (data) => {
+	var pushData = (data) => {
 		var pixel = normalizePixel(convertDataToPixel(data));
 
 		if (currentDataCoord[0] >= gl.canvas.width + 1) {
@@ -146,4 +147,16 @@ function PixelBuffer() {
 			currentDataCoord[0] += 1;
 		}
 	}
+
+	this.pushMatrix = (dataList, rows, cols) => {
+		for (var x = 0; x < rows; x++) {
+			for (var y = 0; y < cols; y++) {
+				pushData(dataList[y + (x * cols)]);
+			}
+		}
+
+		dataArray.push([[currentDataCoord[0] - 2, currentDataCoord[1]], rows, cols]);
+	}
+
+	this.getDataArray = () => { return dataArray; }
 }
