@@ -193,6 +193,24 @@ function PixelBuffer() {
 		dataArray.push([[currentDataCoord[0] - (cols * rows) - 1, currentDataCoord[1]], rows, cols]);
 	}
 
-	this.getData = (index) => { return dataArray[index]; }
-	this.getDataCount = () => { return dataArray.length; }
+	this.getMatrixCount = () => { return dataArray.length; }
+	
+	this.getMatrix = (index) => {
+		var tempMatrix = [];
+		for (var row = 0; row < dataArray[index][1]; row++) {
+			var tempRow = [];
+			for (var col = 0; col < dataArray[index][2]; col++) {
+				if (dataArray[index][0][0] + col + (row * dataArray[index][2]) < 0) {
+					tempRow.push(convertPixelToData(getPixel(CANVAS_WIDTH + dataArray[index][0][0] + col + (row * dataArray[index][2]), (dataArray[index][0][1] - 1))));
+				}
+				else {
+					tempRow.push(convertPixelToData(getPixel(dataArray[index][0][0] + col + (row * dataArray[index][2]), dataArray[index][0][1])));
+				}
+			}
+
+			tempMatrix.push(tempRow);
+		}
+
+		return tempMatrix; 
+	}
 }
