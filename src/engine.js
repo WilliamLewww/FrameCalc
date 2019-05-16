@@ -8,9 +8,10 @@ const CANVAS_HEIGHT = 200;
 var gl;
 var programList = [];
 
-function initialize() {
-	var canvas = document.getElementById("glCanvas");
+function initialize(canvas = document.createElement('canvas')) {
 	gl = canvas.getContext("experimental-webgl");
+	gl.canvas.width = CANVAS_WIDTH;
+	gl.canvas.height = CANVAS_HEIGHT;
 	gl.viewport(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
 	programList.push(createProgram(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
