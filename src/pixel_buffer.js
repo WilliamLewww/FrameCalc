@@ -31,7 +31,7 @@ function convertPixelToData(pixel) {
 
 function getPixel(x, y) {
 	var pixels = new Uint8Array(4);
-	gl.readPixels(x, SCREEN_HEIGHT - y - 1, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+	gl.readPixels(x, CANVAS_HEIGHT - y - 1, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
 
 	return pixels;
 }
@@ -61,7 +61,7 @@ function PointTest(x, y) {
 		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getColorArray()), gl.STATIC_DRAW);
 		gl.vertexAttribPointer(this.colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
-		gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
+		gl.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
 		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 8);
 	}
 
@@ -121,31 +121,31 @@ function PixelBuffer() {
 				if(currentDataCoord[0] != 0) {
 					gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 					gl.enableVertexAttribArray(positionAttributeLocation);
-					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(gl.canvas.width-1)))*x,((8+(4*(gl.canvas.width-1)))*x)+(4*currentDataCoord[0]))), gl.STATIC_DRAW);
+					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(CANVAS_WIDTH-1)))*x,((8+(4*(CANVAS_WIDTH-1)))*x)+(4*currentDataCoord[0]))), gl.STATIC_DRAW);
 					gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
 
 					gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
 					gl.enableVertexAttribArray(colorAttributeLocation);
-					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(gl.canvas.width-1)))*x,((16+(8*(gl.canvas.width-1)))*x)+(8*currentDataCoord[0]))), gl.STATIC_DRAW);
+					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(8*currentDataCoord[0]))), gl.STATIC_DRAW);
 					gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
-					gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
+					gl.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
 					gl.drawArrays(gl.TRIANGLE_STRIP, 0, currentDataCoord[0] * 2);
 				}
 			}
 			else {
 				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 				gl.enableVertexAttribArray(positionAttributeLocation);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(gl.canvas.width-1)))*x,((8+(4*(gl.canvas.width-1)))*x)+(8+(4*(gl.canvas.width-1)))*(x+1))), gl.STATIC_DRAW);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(CANVAS_WIDTH-1)))*x,((8+(4*(CANVAS_WIDTH-1)))*x)+(8+(4*(CANVAS_WIDTH-1)))*(x+1))), gl.STATIC_DRAW);
 				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
 
 				gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
 				gl.enableVertexAttribArray(colorAttributeLocation);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(gl.canvas.width-1)))*x,((16+(8*(gl.canvas.width-1)))*x)+(16+(8*(gl.canvas.width-1)))*(x+1))), gl.STATIC_DRAW);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(16+(8*(CANVAS_WIDTH-1)))*(x+1))), gl.STATIC_DRAW);
 				gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
-				gl.uniform2f(this.resolutionLocation, gl.canvas.width, gl.canvas.height);
-				gl.drawArrays(gl.TRIANGLE_STRIP, 0, (gl.canvas.width*2) + 2);
+				gl.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+				gl.drawArrays(gl.TRIANGLE_STRIP, 0, (CANVAS_WIDTH*2) + 2);
 			}
 		}
 	}
@@ -153,7 +153,7 @@ function PixelBuffer() {
 	var pushData = (data) => {
 		var pixel = normalizePixel(convertDataToPixel(data));
 
-		if (currentDataCoord[0] >= gl.canvas.width + 1) {
+		if (currentDataCoord[0] >= CANVAS_WIDTH + 1) {
 			currentDataCoord[0] = 0; currentDataCoord[1] += 1;
 		}
 
@@ -194,4 +194,5 @@ function PixelBuffer() {
 	}
 
 	this.getData = (index) => { return dataArray[index]; }
+	this.getDataCount = () => { return dataArray.length; }
 }
