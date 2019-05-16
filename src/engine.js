@@ -26,7 +26,7 @@ function initialize() {
 	}
 	pixelBuffer.render();
 
-	console.log(pixelBuffer.getDataArray());
+	console.log(pixelBuffer.getData(0));
 	console.log(convertPixelToData(getPixel(0,0)));
 }
 

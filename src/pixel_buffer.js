@@ -158,5 +158,5 @@ function PixelBuffer() {
 		dataArray.push([[currentDataCoord[0] - 2, currentDataCoord[1]], rows, cols]);
 	}
 
-	this.getDataArray = () => { return dataArray; }
+	this.getData = (index) => { return dataArray[index]; }
 }
