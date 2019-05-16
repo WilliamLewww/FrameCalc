@@ -1,6 +1,41 @@
 function normalizePixel(pixel) { return [pixel[0] / 255, pixel[1] / 255, pixel[2] / 255, pixel[3] / 255]; }
 function denormalizePixel(pixel) { return [pixel[0] * 255, pixel[1] * 255, pixel[2] * 255, pixel[3] * 255]; }
 
+function convertDataToPixel(data) {
+	if (data > MAX_DATA_VALUE) { return ([155,MAX_RGB_VALUES[1],MAX_RGB_VALUES[2],MAX_RGB_VALUES[3]]); }
+	if (data < -MAX_DATA_VALUE) { return ([255,MAX_RGB_VALUES[1],MAX_RGB_VALUES[2],MAX_RGB_VALUES[3]]); }
+
+	var tempData = (data < 0) ? data * -1 : data;
+	var dec = (tempData % 1) * 10000;
+	dec = (dec - (dec << 0) < 0.5 ? (dec << 0) : ((dec + 1) << 0));
+	tempData = tempData << 0;
+	var g = tempData % 100;
+	var r = (tempData / 100) << 0;
+	var a = dec % 100;
+	var b = (dec / 100) << 0;
+
+	if (data < 0) { return ([r + 200, g, b, a]); }
+	else { return ([r + 100, g, b, a]); }
+}
+
+function convertPixelToData(pixel) {
+	var tempData = (pixel[0] - (((pixel[0] / 100) << 0) * 100)) * 100;
+	var roundG = (pixel[1] - (pixel[1] << 0) < 0.5 ? (pixel[1] << 0) : ((pixel[1] + 1) << 0));
+	var roundB = (pixel[2] - (pixel[2] << 0) < 0.5 ? (pixel[2] << 0) : ((pixel[2] + 1) << 0));
+	var roundA = (pixel[3] - (pixel[3] << 0) < 0.5 ? (pixel[3] << 0) : ((pixel[3] + 1) << 0));
+	tempData += roundG + (roundB/100) + (roundA/10000);
+
+	if (((pixel[0] / 100) << 0) == 1) { return tempData; }
+	if (((pixel[0] / 100) << 0) == 2) { return -tempData; }
+}
+
+function getPixel(x, y) {
+	var pixels = new Uint8Array(4);
+	gl.readPixels(x, SCREEN_HEIGHT - y - 1, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+
+	return pixels;
+}
+
 function PointTest(x, y) {
 	this.x = x;
 	this.y = y;
