@@ -29,6 +29,19 @@ function convertPixelToData(pixel) {
 	if (((pixel[0] / 100) << 0) == 2) { return -tempData; }
 }
 
+function transposeMatrix(matrix) {
+	var tempMatrix = [];
+	for (var x = 0; x < matrix[0].length; x++) {
+		var tempRow = [];
+		for (var y = 0; y < matrix.length; y++) {
+			tempRow.push(matrix[y][x]);
+		}
+		tempMatrix.push(tempRow);
+	}
+
+	return tempMatrix;
+}
+
 function getPixel(x, y) {
 	var pixels = new Uint8Array(4);
 	gl.readPixels(x, CANVAS_HEIGHT - y - 1, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
@@ -193,6 +206,18 @@ function PixelBuffer() {
 		dataArray.push([[currentDataCoord[0] - (cols * rows) - 1, currentDataCoord[1]], rows, cols]);
 	}
 
+	this.multiplyMatrix = (matrixIndexA, matrixIndexB) => {
+		var matrixA = this.getMatrix(matrixIndexA);
+		var matrixB = transposeMatrix(this.getMatrix(matrixIndexB));
+		var bufferSpace = matrixA.length * matrixB.length;
+
+		for (var x = 0; x < matrixB.length; x++) {
+			for (var y = 0; y < matrixA.length; y++) {
+				console.log(matrixA[y] + ":" + matrixB[x]);
+			}
+		}
+	}
+	
 	this.getMatrixCount = () => { return dataArray.length; }
 	
 	this.getMatrix = (index) => {
