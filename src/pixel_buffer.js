@@ -115,19 +115,17 @@ function PixelBuffer() {
 	var colorArray = [];
 	var currentDataCoord = [0,0];
 
-	var program = programList[SHADER_SOURCE.BUFFER];
-
-	var positionBuffer = gl.createBuffer();
-	var colorBuffer = gl.createBuffer();
-	var positionAttributeLocation = gl.getAttribLocation(program, 'position');
-	var colorAttributeLocation = gl.getAttribLocation(program, 'a_color');
-	var resolutionLocation = gl.getUniformLocation(program, 'resolution');
-
 	var pointTest = new PointTest(-3,0);
 
 	this.render = () => {
 		pointTest.draw();
-		gl.useProgram(program);
+
+		var positionBuffer = gl.createBuffer();
+		var colorBuffer = gl.createBuffer();
+		var positionAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.BUFFER], 'position');
+		var colorAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.BUFFER], 'a_color');
+		var resolutionLocation = gl.getUniformLocation(programList[SHADER_SOURCE.BUFFER], 'resolution');
+		gl.useProgram(programList[SHADER_SOURCE.BUFFER]);
 
 		for (var x = 0; x <= currentDataCoord[1]; x++) {
 			if (x == currentDataCoord[1]) {
@@ -142,7 +140,7 @@ function PixelBuffer() {
 					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(8*currentDataCoord[0]))), gl.STATIC_DRAW);
 					gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
-					gl.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+					gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
 					gl.drawArrays(gl.TRIANGLE_STRIP, 0, currentDataCoord[0] * 2);
 				}
 			}
@@ -157,8 +155,40 @@ function PixelBuffer() {
 				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(16+(8*(CANVAS_WIDTH-1)))*(x+1))), gl.STATIC_DRAW);
 				gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
 
-				gl.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+				gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
 				gl.drawArrays(gl.TRIANGLE_STRIP, 0, (CANVAS_WIDTH*2) + 2);
+			}
+		}
+	}
+
+	this.multiplyMatrix = (matrixIndexA, matrixIndexB) => {
+		pointTest.draw();
+
+		var positionBuffer = gl.createBuffer();
+		var positionAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'position');
+		var resolutionLocation = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'resolution');
+		var matrixLocationA = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'matrixA');
+		var matrixLocationB = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'matrixB');
+		gl.useProgram(programList[SHADER_SOURCE.MULTIPLY_2X2]);
+
+		var matrixA = this.getMatrix(matrixIndexA);
+		var matrixB = transposeMatrix(this.getMatrix(matrixIndexB));
+		var bufferSpace = matrixA.length * matrixB.length;
+
+		var previousDataCoord = [currentDataCoord[0], currentDataCoord[1]];
+		for (var x = 0; x < bufferSpace; x++) { pushData(0); }
+
+		for (var x = 0; x < matrixB.length; x++) {
+			for (var y = 0; y < matrixA.length; y++) {
+				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+				gl.enableVertexAttribArray(positionAttributeLocation);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((previousDataCoord[0]*4)-4, (previousDataCoord[0]*4) + (bufferSpace**2))), gl.STATIC_DRAW);
+				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+				gl.uniform1fv(matrixLocationA, new Float32Array(matrixA[y]));
+				gl.uniform1fv(matrixLocationB, new Float32Array(matrixB[x]));
+				gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+				gl.drawArrays(gl.TRIANGLE_STRIP, 0, 2+(2*bufferSpace));
 			}
 		}
 	}
@@ -204,18 +234,6 @@ function PixelBuffer() {
 		}
 
 		dataArray.push([[currentDataCoord[0] - (cols * rows) - 1, currentDataCoord[1]], rows, cols]);
-	}
-
-	this.multiplyMatrix = (matrixIndexA, matrixIndexB) => {
-		var matrixA = this.getMatrix(matrixIndexA);
-		var matrixB = transposeMatrix(this.getMatrix(matrixIndexB));
-		var bufferSpace = matrixA.length * matrixB.length;
-
-		for (var x = 0; x < matrixB.length; x++) {
-			for (var y = 0; y < matrixA.length; y++) {
-				console.log(matrixA[y] + ":" + matrixB[x]);
-			}
-		}
 	}
 	
 	this.getMatrixCount = () => { return dataArray.length; }

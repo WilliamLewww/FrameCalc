@@ -31,7 +31,6 @@ function performOperations() {
 							6,7], 2, 2);
 	pixelBuffer.render();
 	pixelBuffer.multiplyMatrix(0,1);
-	pixelBuffer.render();
 }
 
 function createProgram(vertexSource, fragmentSource) {
