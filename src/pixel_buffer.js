@@ -173,22 +173,21 @@ function PixelBuffer() {
 
 		var matrixA = this.getMatrix(matrixIndexA);
 		var matrixB = transposeMatrix(this.getMatrix(matrixIndexB));
-		var bufferSpace = matrixA.length * matrixB.length;
 
 		var previousDataCoord = [currentDataCoord[0], currentDataCoord[1]];
-		for (var x = 0; x < bufferSpace; x++) { pushData(0); }
+		this.pushMatrix([], matrixA.length, matrixB.length);
 
 		for (var x = 0; x < matrixB.length; x++) {
 			for (var y = 0; y < matrixA.length; y++) {
 				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 				gl.enableVertexAttribArray(positionAttributeLocation);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((previousDataCoord[0]*4)-4, (previousDataCoord[0]*4) + (bufferSpace**2))), gl.STATIC_DRAW);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((previousDataCoord[0]*4)-4, (previousDataCoord[0]*4)+((matrixA.length*matrixB.length)**2))), gl.STATIC_DRAW);
 				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
 
 				gl.uniform1fv(matrixLocationA, new Float32Array(matrixA[y]));
 				gl.uniform1fv(matrixLocationB, new Float32Array(matrixB[x]));
 				gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
-				gl.drawArrays(gl.TRIANGLE_STRIP, 0, 2+(2*bufferSpace));
+				gl.drawArrays(gl.TRIANGLE_STRIP, 0, 2+(2*matrixA.length*matrixB.length));
 			}
 		}
 	}
