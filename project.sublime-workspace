@@ -520,11 +520,28 @@
 	"buffers":
 	[
 		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 559,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/pixel_buffer.js",
 			"settings":
 			{
-				"buffer_size": 9798,
+				"buffer_size": 9875,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/William/Desktop/spicy ideas.txt",
+			"settings":
+			{
+				"buffer_size": 125,
 				"line_ending": "Windows"
 			}
 		},
@@ -532,16 +549,7 @@
 			"file": "src/engine.js",
 			"settings":
 			{
-				"buffer_size": 1573,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 559,
+				"buffer_size": 1613,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1417,6 +1425,7 @@
 	],
 	"file_history":
 	[
+		"/C/Projects/FrameCalc/src/engine.js",
 		"/C/Users/William/Desktop/Why am I here.txt",
 		"/C/Projects/FrameCalc/index.html",
 		"/C/Users/William/Desktop/spicy ideas.txt",
@@ -1543,12 +1552,11 @@
 		"/C/Projects/Mood/editor/src/wall.cpp",
 		"/C/Projects/Mood/editor/src/wall.h",
 		"/C/Projects/Mood/editor/src/drawing.cpp",
-		"/C/Projects/Mood/editor/src/drawing.h",
-		"/C/Users/William/Desktop/names of assholes"
+		"/C/Projects/Mood/editor/src/drawing.h"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -1563,6 +1571,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bufferSpace",
+			"MULTIPLY_2X2",
 			"point",
 			"this",
 			"console.log(positionArray);",
@@ -1688,8 +1698,6 @@
 			"I",
 			"i",
 			"I",
-			"i",
-			"I",
 			"i"
 		],
 		"highlight": true,
@@ -1708,75 +1716,11 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/pixel_buffer.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9798,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5106,
-								5106
-							]
-						],
-						"settings":
-						{
-							"SL.14.region_keys":
-							[
-							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1401.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/engine.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1573,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9,
-								9
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -1810,26 +1754,83 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/engine.js",
+					"file": "src/pixel_buffer.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1573,
+						"buffer_size": 9875,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1015,
-								1015
+								7096,
+								7096
 							]
 						],
 						"settings":
 						{
-							"SL.15.region_keys":
+							"SL.14.region_keys":
 							[
 							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1813.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/William/Desktop/spicy ideas.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/engine.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1110,
+								1110
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
@@ -1837,17 +1838,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "src/shader_source.js",
 					"semi_transient": false,
 					"settings":
@@ -1859,8 +1854,8 @@
 						"selection":
 						[
 							[
-								668,
-								668
+								2259,
+								2259
 							]
 						],
 						"settings":
@@ -1874,10 +1869,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 310.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1885,7 +1880,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1900,18 +1895,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1941,7 +1929,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1951,16 +1939,16 @@
 		"selected_items":
 		[
 			[
+				"en",
+				"src\\engine.js"
+			],
+			[
 				"sha",
 				"src\\shader_source.js"
 			],
 			[
 				"inde",
 				"index.html"
-			],
-			[
-				"en",
-				"src\\engine.js"
 			],
 			[
 				"",
@@ -2431,7 +2419,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

@@ -26,12 +26,12 @@ function performOperations() {
 	
 	var pixelBuffer = new PixelBuffer();
 	pixelBuffer.pushMatrix([0,1,
-							2,3], 2, 2);
+							1,0], 2, 2);
 	pixelBuffer.pushMatrix([4,5,
 							6,7], 2, 2);
 	pixelBuffer.render();
 	pixelBuffer.multiplyMatrix(0,1);
-	console.log(pixelBuffer.getMatrix(0));
+	console.log(pixelBuffer.getMatrix(2));
 }
 
 function createProgram(vertexSource, fragmentSource) {
