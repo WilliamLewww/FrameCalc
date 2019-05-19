@@ -1,7 +1,7 @@
 
 
 # FrameCalc
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) ![commits](https://img.shields.io/github/commit-activity/m/WilliamLewww/FrameCalc.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/WilliamLewww/FrameCalc) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/WilliamLewww/FrameCalc) [![commits](https://img.shields.io/github/commit-activity/m/WilliamLewww/FrameCalc.svg)](https://github.com/WilliamLewww/FrameCalc)
 
 FrameCalc is a Javascript library that uses GLSL Shader programs to perform calculations in the GPU.
 
