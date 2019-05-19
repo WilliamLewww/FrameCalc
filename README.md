@@ -54,6 +54,9 @@ pixelBuffer.pushMatrix([0,1,
 pixelBuffer.pushMatrix([5,4,3,
 			2,1,0],2,3);
 
+//render the two matrices to the framebuffer
+pixelBuffer.render();
+
 //multiply the first and second matrix
 pixelBuffer.multiplyMatrix(0,1);
 
