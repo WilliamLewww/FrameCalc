@@ -1,4 +1,5 @@
 
+
 # FrameCalc
 
 FrameCalc is a Javascript library that uses GLSL Shader programs to perform calculations in the GPU.
@@ -12,6 +13,16 @@ Include 'framecalc.min.js' to your website.
 ```
 
 ## Usage
+Make sure to initialize FrameCalc!
+
+```html
+<!-- index.html -->
+<body onload="initialize(document.getElementById('glCanvas'))">
+	<canvas id="glCanvas" width="200" height="200">
+	        Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.
+	</canvas>
+</body>
+```
 Simple demonstration of 2x2 matrix multiplication.
 ```javascript
 var pixelBuffer = new PixelBuffer();
