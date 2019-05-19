@@ -26,7 +26,7 @@ function performOperations() {
 	
 	var pixelBuffer = new PixelBuffer();
 	pixelBuffer.pushMatrix([0,1,
-							1,0], 2, 2);
+							2,3], 2, 2);
 	pixelBuffer.pushMatrix([4,5,
 							6,7], 2, 2);
 	pixelBuffer.render();
