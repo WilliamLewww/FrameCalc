@@ -164,12 +164,14 @@ function PixelBuffer() {
 	this.multiplyMatrix = (matrixIndexA, matrixIndexB) => {
 		pointTest.draw();
 
+		var program = programList[SHADER_SOURCE.MULTIPLY_SAME_SIZE];
+
 		var positionBuffer = gl.createBuffer();
-		var positionAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'position');
-		var resolutionLocation = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'resolution');
-		var matrixLocationA = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'matrixA');
-		var matrixLocationB = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_2X2], 'matrixB');
-		gl.useProgram(programList[SHADER_SOURCE.MULTIPLY_2X2]);
+		var positionAttributeLocation = gl.getAttribLocation(program, 'position');
+		var resolutionLocation = gl.getUniformLocation(program, 'resolution');
+		var matrixLocationA = gl.getUniformLocation(program, 'matrixA');
+		var matrixLocationB = gl.getUniformLocation(program, 'matrixB');
+		gl.useProgram(program);
 
 		var matrixA = this.getMatrix(matrixIndexA);
 		var matrixB = transposeMatrix(this.getMatrix(matrixIndexB));
