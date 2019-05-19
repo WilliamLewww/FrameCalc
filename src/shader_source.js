@@ -49,7 +49,7 @@ const FRAGMENT_SHADER_PIXEL_BUFFER = [
 '}															\n',
 ].join('');
 
-const VERTEX_SHADER_MULTIPLY_SAME_SIZE = [
+const VERTEX_SHADER_MULTIPLY_MATRIX = [
 'attribute vec2 position;								 	\n',
 '															\n',
 'uniform vec2 resolution;								 	\n',
@@ -63,7 +63,7 @@ const VERTEX_SHADER_MULTIPLY_SAME_SIZE = [
 '}														 	\n',
 ].join('');
 
-const FRAGMENT_SHADER_MULTIPLY_SAME_SIZE = [
+const FRAGMENT_SHADER_MULTIPLY_MATRIX = [
 'precision mediump float;																																		\n',
 '																																								\n',
 'uniform float matrixA[5];																																		\n',

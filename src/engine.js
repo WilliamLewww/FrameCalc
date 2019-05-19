@@ -1,4 +1,4 @@
-const SHADER_SOURCE = { "DEFAULT": 0, "BUFFER": 1, "MULTIPLY_SAME_SIZE": 2 };
+const SHADER_SOURCE = { "DEFAULT": 0, "BUFFER": 1, "MULTIPLY_MATRIX": 2 };
 const MAX_DATA_VALUE = 5599.9999;
 const MAX_RGB_VALUES = [255,99,99,99];
 const CANVAS_WIDTH = 200;
@@ -15,7 +15,7 @@ function initialize(canvas = document.createElement('canvas')) {
 
 	programList.push(createProgram(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
 	programList.push(createProgram(VERTEX_SHADER_PIXEL_BUFFER, FRAGMENT_SHADER_PIXEL_BUFFER));
-	programList.push(createProgram(VERTEX_SHADER_MULTIPLY_SAME_SIZE, FRAGMENT_SHADER_MULTIPLY_SAME_SIZE));
+	programList.push(createProgram(VERTEX_SHADER_MULTIPLY_MATRIX, FRAGMENT_SHADER_MULTIPLY_MATRIX));
 	
 	performOperations();
 }
@@ -25,8 +25,8 @@ function performOperations() {
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 	
 	var pixelBuffer = new PixelBuffer();
-	pixelBuffer.pushMatrix([0,1,2,3], 2, 2);
-	pixelBuffer.pushMatrix([4,5,6,7], 2, 2);
+	pixelBuffer.pushMatrix([0,1,2,3,4,5], 2, 3);
+	pixelBuffer.pushMatrix([4,5,6,7,8,9], 3, 2);
 	pixelBuffer.render();
 	pixelBuffer.multiplyMatrix(0,1);
 	console.log(pixelBuffer.getMatrix(2));
