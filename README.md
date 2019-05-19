@@ -51,5 +51,5 @@ pixelBuffer.multiplyMatrix(0,1);
 var result = pixelBuffer.getMatrix(pixelBuffer.getMatrixCount());
 ```
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Contributors
+**William Lew** - SFSU Computer Science Undergraduate
