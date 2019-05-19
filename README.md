@@ -5,7 +5,7 @@ FrameCalc is a Javascript library that uses GLSL Shader programs to perform calc
 
 ## Installation
 
-Include 'framecalc.min.js' to your webpage.
+Include 'framecalc.min.js' to your website.
 
 ```html
 <script src="framecalc.min.js"></script>
