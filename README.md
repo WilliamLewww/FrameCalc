@@ -49,8 +49,6 @@ var pixelBuffer = new PixelBuffer();
 pixelBuffer.pushMatrix([0,1,
 			2,3,
 			4,5],3,2);
-//render the matrix to the framebuffer
-pixelBuffer.render();
 
 //create a matrix with 2 rows and 3 cols
 pixelBuffer.pushMatrix([5,4,3,
@@ -60,7 +58,7 @@ pixelBuffer.pushMatrix([5,4,3,
 pixelBuffer.multiplyMatrix(0,1);
 
 //get the result of the calculation
-var result = pixelBuffer.getMatrix(pixelBuffer.getMatrixCount());
+var result = pixelBuffer.getMatrix(pixelBuffer.getMatrixCount() - 1);
 ```
 
 ## Contributors
