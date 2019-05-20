@@ -37,7 +37,7 @@ console.log(pixelBuffer.getMatrix(2));
 ```
 
 ## Description
-Unlike the other GPU based calculation libraries in Javascript, FrameCalc uses a framebuffer to store/manipulate data.
+FrameCalc uses a framebuffer to store/manipulate data as pixels. The data is fed through the OpenGL pipeline and the GPU outputs the data to the framebuffer. ```Vertex Calculations``` are done on the ```Vertex Shader``` and ```Matrix Calculations``` are done on the ```Fragment Shader```.
 
 The ```PixelBuffer``` object stores the created matrices and calculations.
 ```javascript
