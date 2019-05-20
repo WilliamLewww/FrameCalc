@@ -190,6 +190,26 @@ function PixelBuffer() {
 				gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 			}
 		}
+
+		var result = this.getMatrix(this.getMatrixCount() - 1);
+		for (var x = 0; x < result.length; x++) {
+			for (var y = 0; y < result[x].length; y++) {
+				var pixel = normalizePixel(convertDataToPixel(result[x][y]));
+
+				if (previousDataCoord[0] + (x * result[x].length) + y == 0 || previousDataCoord[0] + (x * result[x].length) + y == CANVAS_WIDTH) {
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				}
+				else {
+					colorArray.pop();colorArray.pop();colorArray.pop();colorArray.pop();
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+					colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				}
+			}
+		}
 	}
 
 	var pushData = (data) => {
@@ -205,10 +225,12 @@ function PixelBuffer() {
 			positionArray.push(currentDataCoord[0] + 1); positionArray.push(currentDataCoord[1]);
 			positionArray.push(currentDataCoord[0] + 1); positionArray.push(currentDataCoord[1] + 1);
 
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			if (data != undefined) {
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			}
 
 			currentDataCoord[0] += 2;
 		}
@@ -216,10 +238,12 @@ function PixelBuffer() {
 			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1]);
 			positionArray.push(currentDataCoord[0]); positionArray.push(currentDataCoord[1] + 1);
 
-			colorArray.pop();colorArray.pop();colorArray.pop();colorArray.pop();
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
-			colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			if (data != undefined) {
+				colorArray.pop();colorArray.pop();colorArray.pop();colorArray.pop();
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+				colorArray.push(pixel[0],pixel[1],pixel[2],pixel[3]);
+			}
 
 			currentDataCoord[0] += 1;
 		}
