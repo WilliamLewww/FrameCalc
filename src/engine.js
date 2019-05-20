@@ -4,25 +4,25 @@ const MAX_RGB_VALUES = [255,99,99,99];
 const CANVAS_WIDTH = 200;
 const CANVAS_HEIGHT = 200;
 
-var gl;
-var programList = [];
+var glFC;
+var programListFC = [];
 
-function initialize(canvas = document.createElement('canvas')) {
-	gl = canvas.getContext("experimental-webgl");
-	gl.canvas.width = CANVAS_WIDTH;
-	gl.canvas.height = CANVAS_HEIGHT;
-	gl.viewport(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+function initializeFC(canvas = document.createElement('canvas')) {
+	glFC = canvas.getContext("experimental-webgl");
+	glFC.canvas.width = CANVAS_WIDTH;
+	glFC.canvas.height = CANVAS_HEIGHT;
+	glFC.viewport(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-	programList.push(createProgram(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
-	programList.push(createProgram(VERTEX_SHADER_PIXEL_BUFFER, FRAGMENT_SHADER_PIXEL_BUFFER));
-	programList.push(createProgram(VERTEX_SHADER_MULTIPLY_MATRIX, FRAGMENT_SHADER_MULTIPLY_MATRIX));
+	programListFC.push(createProgramFC(VERTEX_SHADER_DEFAULT, FRAGMENT_SHADER_DEFAULT));
+	programListFC.push(createProgramFC(VERTEX_SHADER_PIXEL_BUFFER, FRAGMENT_SHADER_PIXEL_BUFFER));
+	programListFC.push(createProgramFC(VERTEX_SHADER_MULTIPLY_MATRIX, FRAGMENT_SHADER_MULTIPLY_MATRIX));
 	
-	performOperations();
+	performOperationsFC();
 }
 
-function performOperations() {
-	gl.clearColor(0.0, 0.0, 0.0, 0.0);
-	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+function performOperationsFC() {
+	glFC.clearColor(0.0, 0.0, 0.0, 0.0);
+	glFC.clear(glFC.COLOR_BUFFER_BIT | glFC.DEPTH_BUFFER_BIT);
 	
 	var pixelBuffer = new PixelBuffer();
 	pixelBuffer.pushMatrix([0,1,2,3,4,5], 2, 3);
@@ -32,19 +32,19 @@ function performOperations() {
 	console.log(pixelBuffer.getMatrix(2));
 }
 
-function createProgram(vertexSource, fragmentSource) {
-	var vertexShader = gl.createShader(gl.VERTEX_SHADER);
-	var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-	gl.shaderSource(vertexShader, vertexSource);
-	gl.shaderSource(fragmentShader, fragmentSource);
+function createProgramFC(vertexSource, fragmentSource) {
+	var vertexShader = glFC.createShader(glFC.VERTEX_SHADER);
+	var fragmentShader = glFC.createShader(glFC.FRAGMENT_SHADER);
+	glFC.shaderSource(vertexShader, vertexSource);
+	glFC.shaderSource(fragmentShader, fragmentSource);
 
-	gl.compileShader(vertexShader);
-	gl.compileShader(fragmentShader);
+	glFC.compileShader(vertexShader);
+	glFC.compileShader(fragmentShader);
 
-	var program = gl.createProgram();
-	gl.attachShader(program, vertexShader);
-	gl.attachShader(program, fragmentShader);
-	gl.linkProgram(program);
+	var program = glFC.createProgram();
+	glFC.attachShader(program, vertexShader);
+	glFC.attachShader(program, fragmentShader);
+	glFC.linkProgram(program);
 
 	return program;
 }

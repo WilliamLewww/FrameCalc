@@ -44,7 +44,7 @@ function transposeMatrix(matrix) {
 
 function getPixel(x, y) {
 	var pixels = new Uint8Array(4);
-	gl.readPixels(x, CANVAS_HEIGHT - y - 1, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+	glFC.readPixels(x, CANVAS_HEIGHT - y - 1, 1, 1, glFC.RGBA, glFC.UNSIGNED_BYTE, pixels);
 
 	return pixels;
 }
@@ -53,29 +53,29 @@ function PointTest(x, y) {
 	this.x = x;
 	this.y = y;
 
-	this.program = programList[SHADER_SOURCE.BUFFER];
+	this.program = programListFC[SHADER_SOURCE.BUFFER];
 
-	this.positionBuffer = gl.createBuffer();
-	this.colorBuffer = gl.createBuffer();
-	this.positionAttributeLocation = gl.getAttribLocation(this.program, 'position');
-	this.colorAttributeLocation = gl.getAttribLocation(this.program, 'a_color');
-	this.resolutionLocation = gl.getUniformLocation(this.program, 'resolution');
+	this.positionBuffer = glFC.createBuffer();
+	this.colorBuffer = glFC.createBuffer();
+	this.positionAttributeLocation = glFC.getAttribLocation(this.program, 'position');
+	this.colorAttributeLocation = glFC.getAttribLocation(this.program, 'a_color');
+	this.resolutionLocation = glFC.getUniformLocation(this.program, 'resolution');
 
 	this.draw = () => {
-		gl.useProgram(this.program);
+		glFC.useProgram(this.program);
 
-		gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
-		gl.enableVertexAttribArray(this.positionAttributeLocation);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getPositionArray()), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(this.positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+		glFC.bindBuffer(glFC.ARRAY_BUFFER, this.positionBuffer);
+		glFC.enableVertexAttribArray(this.positionAttributeLocation);
+		glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(this.getPositionArray()), glFC.STATIC_DRAW);
+		glFC.vertexAttribPointer(this.positionAttributeLocation, 2, glFC.FLOAT, false, 0, 0);
 
-		gl.bindBuffer(gl.ARRAY_BUFFER, this.colorBuffer);
-		gl.enableVertexAttribArray(this.colorAttributeLocation);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.getColorArray()), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(this.colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+		glFC.bindBuffer(glFC.ARRAY_BUFFER, this.colorBuffer);
+		glFC.enableVertexAttribArray(this.colorAttributeLocation);
+		glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(this.getColorArray()), glFC.STATIC_DRAW);
+		glFC.vertexAttribPointer(this.colorAttributeLocation, 4, glFC.FLOAT, false, 0, 0);
 
-		gl.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
-		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 8);
+		glFC.uniform2f(this.resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+		glFC.drawArrays(glFC.TRIANGLE_STRIP, 0, 8);
 	}
 
 	this.getPositionArray = () => {
@@ -120,43 +120,43 @@ function PixelBuffer() {
 	this.render = () => {
 		pointTest.draw();
 
-		var positionBuffer = gl.createBuffer();
-		var colorBuffer = gl.createBuffer();
-		var positionAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.BUFFER], 'position');
-		var colorAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.BUFFER], 'a_color');
-		var resolutionLocation = gl.getUniformLocation(programList[SHADER_SOURCE.BUFFER], 'resolution');
-		gl.useProgram(programList[SHADER_SOURCE.BUFFER]);
+		var positionBuffer = glFC.createBuffer();
+		var colorBuffer = glFC.createBuffer();
+		var positionAttributeLocation = glFC.getAttribLocation(programListFC[SHADER_SOURCE.BUFFER], 'position');
+		var colorAttributeLocation = glFC.getAttribLocation(programListFC[SHADER_SOURCE.BUFFER], 'a_color');
+		var resolutionLocation = glFC.getUniformLocation(programListFC[SHADER_SOURCE.BUFFER], 'resolution');
+		glFC.useProgram(programListFC[SHADER_SOURCE.BUFFER]);
 
 		for (var x = 0; x <= currentDataCoord[1]; x++) {
 			if (x == currentDataCoord[1]) {
 				if(currentDataCoord[0] != 0) {
-					gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-					gl.enableVertexAttribArray(positionAttributeLocation);
-					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(CANVAS_WIDTH-1)))*x,((8+(4*(CANVAS_WIDTH-1)))*x)+(4*currentDataCoord[0]))), gl.STATIC_DRAW);
-					gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+					glFC.bindBuffer(glFC.ARRAY_BUFFER, positionBuffer);
+					glFC.enableVertexAttribArray(positionAttributeLocation);
+					glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(CANVAS_WIDTH-1)))*x,((8+(4*(CANVAS_WIDTH-1)))*x)+(4*currentDataCoord[0]))), glFC.STATIC_DRAW);
+					glFC.vertexAttribPointer(positionAttributeLocation, 2, glFC.FLOAT, false, 0, 0);
 
-					gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-					gl.enableVertexAttribArray(colorAttributeLocation);
-					gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(8*currentDataCoord[0]))), gl.STATIC_DRAW);
-					gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+					glFC.bindBuffer(glFC.ARRAY_BUFFER, colorBuffer);
+					glFC.enableVertexAttribArray(colorAttributeLocation);
+					glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(8*currentDataCoord[0]))), glFC.STATIC_DRAW);
+					glFC.vertexAttribPointer(colorAttributeLocation, 4, glFC.FLOAT, false, 0, 0);
 
-					gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
-					gl.drawArrays(gl.TRIANGLE_STRIP, 0, currentDataCoord[0] * 2);
+					glFC.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+					glFC.drawArrays(glFC.TRIANGLE_STRIP, 0, currentDataCoord[0] * 2);
 				}
 			}
 			else {
-				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-				gl.enableVertexAttribArray(positionAttributeLocation);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(CANVAS_WIDTH-1)))*x,((8+(4*(CANVAS_WIDTH-1)))*x)+(8+(4*(CANVAS_WIDTH-1)))*(x+1))), gl.STATIC_DRAW);
-				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+				glFC.bindBuffer(glFC.ARRAY_BUFFER, positionBuffer);
+				glFC.enableVertexAttribArray(positionAttributeLocation);
+				glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(positionArray.slice((8+(4*(CANVAS_WIDTH-1)))*x,((8+(4*(CANVAS_WIDTH-1)))*x)+(8+(4*(CANVAS_WIDTH-1)))*(x+1))), glFC.STATIC_DRAW);
+				glFC.vertexAttribPointer(positionAttributeLocation, 2, glFC.FLOAT, false, 0, 0);
 
-				gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-				gl.enableVertexAttribArray(colorAttributeLocation);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(16+(8*(CANVAS_WIDTH-1)))*(x+1))), gl.STATIC_DRAW);
-				gl.vertexAttribPointer(colorAttributeLocation, 4, gl.FLOAT, false, 0, 0);
+				glFC.bindBuffer(glFC.ARRAY_BUFFER, colorBuffer);
+				glFC.enableVertexAttribArray(colorAttributeLocation);
+				glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(colorArray.slice((16+(8*(CANVAS_WIDTH-1)))*x,((16+(8*(CANVAS_WIDTH-1)))*x)+(16+(8*(CANVAS_WIDTH-1)))*(x+1))), glFC.STATIC_DRAW);
+				glFC.vertexAttribPointer(colorAttributeLocation, 4, glFC.FLOAT, false, 0, 0);
 
-				gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
-				gl.drawArrays(gl.TRIANGLE_STRIP, 0, (CANVAS_WIDTH*2) + 2);
+				glFC.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+				glFC.drawArrays(glFC.TRIANGLE_STRIP, 0, (CANVAS_WIDTH*2) + 2);
 			}
 		}
 	}
@@ -164,12 +164,12 @@ function PixelBuffer() {
 	this.multiplyMatrix = (matrixIndexA, matrixIndexB) => {
 		pointTest.draw();
 
-		var positionBuffer = gl.createBuffer();
-		var positionAttributeLocation = gl.getAttribLocation(programList[SHADER_SOURCE.MULTIPLY_MATRIX], 'position');
-		var resolutionLocation = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_MATRIX], 'resolution');
-		var matrixLocationA = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_MATRIX], 'matrixA');
-		var matrixLocationB = gl.getUniformLocation(programList[SHADER_SOURCE.MULTIPLY_MATRIX], 'matrixB');
-		gl.useProgram(programList[SHADER_SOURCE.MULTIPLY_MATRIX]);
+		var positionBuffer = glFC.createBuffer();
+		var positionAttributeLocation = glFC.getAttribLocation(programListFC[SHADER_SOURCE.MULTIPLY_MATRIX], 'position');
+		var resolutionLocation = glFC.getUniformLocation(programListFC[SHADER_SOURCE.MULTIPLY_MATRIX], 'resolution');
+		var matrixLocationA = glFC.getUniformLocation(programListFC[SHADER_SOURCE.MULTIPLY_MATRIX], 'matrixA');
+		var matrixLocationB = glFC.getUniformLocation(programListFC[SHADER_SOURCE.MULTIPLY_MATRIX], 'matrixB');
+		glFC.useProgram(programListFC[SHADER_SOURCE.MULTIPLY_MATRIX]);
 
 		var matrixA = this.getMatrix(matrixIndexA);
 		var matrixB = transposeMatrix(this.getMatrix(matrixIndexB));
@@ -179,15 +179,15 @@ function PixelBuffer() {
 
 		for (var x = 0; x < matrixB.length; x++) {
 			for (var y = 0; y < matrixA.length; y++) {
-				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-				gl.enableVertexAttribArray(positionAttributeLocation);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionArray.slice((previousDataCoord[0]*4)-4+(4*((matrixA.length * x) + y)),(previousDataCoord[0]*4)+4+(4*((matrixA.length * x) + y)))), gl.STATIC_DRAW);
-				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+				glFC.bindBuffer(glFC.ARRAY_BUFFER, positionBuffer);
+				glFC.enableVertexAttribArray(positionAttributeLocation);
+				glFC.bufferData(glFC.ARRAY_BUFFER, new Float32Array(positionArray.slice((previousDataCoord[0]*4)-4+(4*((matrixA.length * x) + y)),(previousDataCoord[0]*4)+4+(4*((matrixA.length * x) + y)))), glFC.STATIC_DRAW);
+				glFC.vertexAttribPointer(positionAttributeLocation, 2, glFC.FLOAT, false, 0, 0);
 
-				gl.uniform1fv(matrixLocationA, new Float32Array(matrixA[x]));
-				gl.uniform1fv(matrixLocationB, new Float32Array(matrixB[y]));
-				gl.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
-				gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+				glFC.uniform1fv(matrixLocationA, new Float32Array(matrixA[x]));
+				glFC.uniform1fv(matrixLocationB, new Float32Array(matrixB[y]));
+				glFC.uniform2f(resolutionLocation, CANVAS_WIDTH, CANVAS_HEIGHT);
+				glFC.drawArrays(glFC.TRIANGLE_STRIP, 0, 4);
 			}
 		}
 
