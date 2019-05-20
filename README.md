@@ -17,7 +17,7 @@ Make sure to initialize FrameCalc!
 
 ```html
 <!-- index.html -->
-<body onload="initialize(document.getElementById('glCanvas'))">
+<body onload="initializeFC(document.getElementById('glCanvas'))">
 	<canvas id="glCanvas" width="200" height="200">
 	        Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.
 	</canvas>
