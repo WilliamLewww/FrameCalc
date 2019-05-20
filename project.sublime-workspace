@@ -523,7 +523,7 @@
 			"file": "src/pixel_buffer.js",
 			"settings":
 			{
-				"buffer_size": 10799,
+				"buffer_size": 11001,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -532,7 +532,16 @@
 			"file": "src/engine.js",
 			"settings":
 			{
-				"buffer_size": 1614,
+				"buffer_size": 1678,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/framecalc.min.js",
+			"settings":
+			{
+				"buffer_size": 11007,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -541,7 +550,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 563,
+				"buffer_size": 628,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1044,6 +1053,10 @@
 		"selected_items":
 		[
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
 				"a",
 				"Arithmetic"
 			],
@@ -1058,10 +1071,6 @@
 			[
 				"remove",
 				"Package Control: Remove Package"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"upper",
@@ -1548,7 +1557,7 @@
 	],
 	"find":
 	{
-		"height": 209.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -1563,6 +1572,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"programList",
+			"gl",
+			"programList",
+			"gl",
+			"programList",
+			"gl",
+			"programList",
+			"programListFC",
+			"glFCFC",
+			"glFCFCFC",
+			"gl",
+			"glFCFC",
+			"gl",
+			"function",
+			"gl",
 			"convertDataToPixel",
 			"getPixel",
 			"getMatrix",
@@ -1675,22 +1699,7 @@
 			"i",
 			"I",
 			"i",
-			"I",
-			"i",
-			"I",
-			"i",
-			"I",
-			"i",
-			"I",
-			"i",
-			"I",
-			"i",
-			"I",
-			"i",
-			"I",
-			"i",
-			"I",
-			"i"
+			"I"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1702,13 +1711,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1717,15 +1726,51 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10799,
+						"buffer_size": 11001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6953,
-								6953
+								1889,
+								1889
+							],
+							[
+								3880,
+								3880
+							],
+							[
+								3984,
+								3984
+							],
+							[
+								4084,
+								4084
+							],
+							[
+								4154,
+								4154
+							],
+							[
+								6331,
+								6331
+							],
+							[
+								6441,
+								6441
+							],
+							[
+								6550,
+								6550
+							],
+							[
+								6656,
+								6656
+							],
+							[
+								6732,
+								6732
 							]
 						],
 						"settings":
@@ -1740,10 +1785,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1890.0,
+						"translation.y": 26.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1752,15 +1797,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1614,
+						"buffer_size": 1678,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								760,
-								760
+								1678,
+								1678
 							]
 						],
 						"settings":
@@ -1778,31 +1823,66 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 15.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "index.html",
+					"file": "dist/framecalc.min.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 563,
+						"buffer_size": 11007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								563,
-								563
+								777,
+								777
 							]
 						],
 						"settings":
 						{
+							"SL.18.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								611,
+								511
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
 							"SL.16.region_keys":
 							[
 							],
@@ -1813,11 +1893,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "src/shader_source.js",
 					"semi_transient": false,
 					"settings":
@@ -1829,8 +1909,8 @@
 						"selection":
 						[
 							[
-								3981,
-								3981
+								687,
+								687
 							]
 						],
 						"settings":
@@ -1847,10 +1927,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 658.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1858,7 +1938,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 196.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -1907,7 +1987,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 388.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1916,6 +1996,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"fra",
+				"dist\\framecalc.min.js"
+			],
 			[
 				"inde",
 				"index.html"
